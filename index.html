@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>CSS</title>
+		<script type="text/javascript" src="./script.js"></script>
+  		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reseter.css"/>
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  		<link rel="stylesheet" href="style.css"/>
+	</head>
+	<body>
+		<section id="grids">
+			<h1>How to make grids.</h1><hr>
+			<h2>Creating Named Areas</h2>
+			<p>First, setting a simple grid with<span class="command"> display: grid; </span> inside the container.</p>
+			<p>The gap between the items are obtained by setting <span class="command"> gap: 10px 20px;</span>inside the container.</p>
+			<div class="container1">
+				<div class="item1">1</div>
+				<div class="item1">2</div>
+				<div class="item1">3</div>
+			</div>
+			<p class="question">Which element do we set as the grid container ?</p>
+			<label class="option">The child element
+	  			<input type="checkbox">
+	  			<span class="checkmark"></span>
+			</label>
+			<label class="option">The parent element
+	 			<input type="checkbox">
+	  			<span class="checkmark"></span>
+			</label>
+			<p>Next, grid items into columns, using  <span class="command">grid-template-columns</span></p>
+			<div class="container2">
+				<div class="item1">100px</div>
+				<div class="item1">130px</div>
+				<div class="item1">100px</div>
+			</div>
+			<p>Then, setting a simple grid with multiples items inside. Let's see how it reacts.</p>
+			<div class="container2">
+				<div class="item1">100px</div>
+				<div class="item1">130px</div>
+				<div class="item1">100px</div>
+				<div class="item1">100px</div>
+				<div class="item1">130px</div>
+				<div class="item1">100px</div>
+			</div>			
+			<p>Little note here: when choosing fr instead of px or %, CSS grid behaves in a way that gives the 1fr unit a minimum size of auto minmax(auto, 1fr)</p>	
+			<!-- wrapper { /* other styles */ grid-template-columns: repeat(3, minmax(0, 1fr)); -->
+			<p>Let's now create named areas on the grid then assign grid items to those areas.</p>
+			<p>We need to make sure we have different class names depending on the areas we want for each.</p>
+			<p>Directly in our CSS file, let's make 3 classes and set the <span class="command"> grid-area: item1</span> inside the CSS rule for each of our items.</p>
+			<div class="container3">
+			   	<div class="item1 item-1">Aera 1</div>
+			   	<div class="item1 item-2">Aera 2</div>
+			   	<div class="item1 item-3">Aera 3</div>
+			</div>
+			<p>Inside the grid container rule, we define how grid areas are laid out on the grid with the property :</p>
+			<p><span class="command">  grid-template-areas: "item1 item2 item3".</span></p>
+			<p>It means we create one grid row with three grid columns.</p>
+			<p>If we want to span a grid item across multiple grid columns, we repeat the name of the grid item like so:</p>
+			<p><span class="command">  grid-template-areas: "item1 item2 item2".</span></p>
+			<div class="container4">
+				<div class="item1 item-1">Aera 1</div>
+				<div class="item1 item-2">Aera 2</div>
+			</div>
+			<p>We can also use <span class="command">"..."</span> or just <span class="command">"."</span> for leaving the grid area <strong>empty</strong>. Here, the first and the third grid columns are empty.</p>
+			<p>Here's the code: <span class="command">grid-template-areas: "... item1 ... item2";</span></p>
+			<div class="container5">
+			   <div class="item1 item-1">Aera 1</div>
+			   <div class="item1 item-2">Aera 2</div>
+			</div>
+			<p>If we want to create different areas for different rows, we addd each row in between quotes: <span class="command">grid-template-areas: "item4 item3" "item2 item1"</span></p>
+			<p>You can do what you want we the order</p>
+			<div class="container6">
+				<div class="item1 item-4">Aera 1</div>
+				<div class="item1 item-3">Aera 2</div>
+				<div class="item1 item-2">Aera 3</div>
+				<div class="item1 item-1">Aera 4</div>
+			</div>
+			<p class="question">Where does the <span class="command">grid-area</span> property go ?</p>
+			<label class="option">We add it inside the CSS rule for each grid element
+				<input type="checkbox">
+				<span class="checkmark"></span>
+			</label>
+			<label class="option">We addd it inside the CSS rule for the grid container
+				<input type="checkbox">
+				<span class="checkmark"></span>
+			</label>
+			<p>Make the first gridd item span across two columns :</p>
+			<p><span class="command">.container {<br>display: grid;<br>grid-template-areas: "item1 item1 item2";<br>}</p>
+			<hr>
+			<h2>Sections Using Named Areas</h2>
+			<p>Grid can be used to create different webpage sections like a header, sidebar, main content or footer.</p>
+			<p>We just have to create sections by giving grid items descriptive class names.</p>
+			<div class="container7">
+				<div class="item1 header">Header</div>
+				<div class="item1 main">Main content</div>
+				<div class="item1 sidebar">Sidebar</div>
+				<div class="item1 footer">Footer</div>
+			</div>
+			<p>After covering this very basic layout, we are gonna use the grid to make far more powerful designs depending on our needs.</p>
+			<div class="container8">
+				<div class="item1 header">Header</div>
+				<div class="item1 main">Main content</div>
+				<div class="item1 photo">Photos</div>
+				<div class="item1 button">Button</div>
+				<div class="item1 sidebar">Sidebar</div>
+				<div class="item1 footer">Footer</div>
+			</div>
+			<h2>Aligning Grid Items</h2>
+			<p>We use the<span class="command">justify-items</span> to align grid items along the row axis.</p>
+			<p>The default value is <span class="command">stretch</span> means they fill all available space, like the first grid we've created.</p>
+			<div class="container9">
+				<div class="item1">Item 1</div>
+				<div class="item1">Item 2</div>
+			</div>
+			<p>Like Flexbox, if we want to align grid items to the left edge of the grid area along the row axis, we use <span class="command">.grid-container {justify-items: start;}</span></p>
+			<div class="container10">
+				<div class="item1">Item 1</div>
+				<div class="item1">Item 2</div>
+			</div>
+			<p>By the way, it's endd for the right edge of the grid area, always along the row axis.</p>
+			<p>More importantly, <span class="command">center</span> used to align the grid items to the center of the column axis</p>
+			<p>If we want to align grid items along the column axis, we set <span class="command">align-items</span> to <span class="command">stretch</span> to have them occupy the entire grid area</p>
+			<div class="container11">
+				<div class="item1">Item 1</div>
+				<div class="item1">Item 2</div>
+			</div>						
+			<p class="question">What happens when we set the <span class="command">align-items</span> property to <span class="command">stretch</span>? </p>
+			<label class="option"> The grid item is set to occupy the entire grid area along the row axis. 
+				<input type="checkbox">
+				<span class="checkmark"></span>
+			</label>
+			<label class="option">The grid item is set to occupy the entire grid area along the column axis.
+				<input type="checkbox">
+				<span class="checkmark"></span>
+			</label>
+			<p>For <span class="command">align-items:center;</span> it pushes grid items to the center of the column axis.</p>
+			<p>The property that aligns grid items along the row axis, is <span class="command">justify-items</span></p>
+			<h2>Usign CSS Grid and Flexbox</h2>
+			<p>Grid is great for combining rows and columns, which makes it iedal for creating an overall layout.</p>
+			<p>Let's take the layout that we've made above.</p>
+			<div class="container12">
+				<div class="item1 header">Header</div>
+				<div class="item1 main">Main content</div>
+				<div class="item1 photo">Photos</div>
+				<button id="buy-button" class="">Buy</button>
+				<div class="item1 sidebar">Sidebar</div>
+				<div class="item1 footer">Footer</div>
+			</div>
+			<p>Problem with just having the first row go to the right side of the page without the other rows to go with the header. <span class="command">justify-content: end;</span>won't do the trick.</p>
+			<div class="container13">
+			<div class="item1 navbar">
+				<a href="#">Home</a>
+				<a href="#">About</a>
+				<a href="#">Contact</a>
+			</div>
+				<div class="item1">1</div>
+				<div class="item1">2</div>
+				<div class="item1">3</div>
+				<div class="item1">4</div>
+				<div class="item1">5</div>
+				<div class="item1">6</div>
+				<div class="item1">7</div>
+				<div class="item1">8</div>
+			</div>
+			<p>Instead, apply a flexbox to the div where the element that we want to display differently is.</p>
+			<p>Now because the element is both a Grid item and a Flexbox container, we can use properties that belong to both layouts. Split up the grid into two columns and make the element of  <span class="command">class="navbar"</span> span across both columns like so : <span class="command">grid-column: span 2;</span> and the grid template property add <span class="command">/ 1fr</span>, after the slash, it's an explicit track listing of column tracks.</p>							
+		</section>
+		<section id="bootstrap">
+			<h1>Bootstrap</h1>
+			<p>Let's display a set a mixed content such as text and images altogether.</p>
+			<p>Add <span class="command">img class="card-img-top"</span></p>
+			<p>Add a div<span class="command">class="card-body"</span> for creating a card body section that will contain a text.</p>
+			<p>Add a div<span class="command">class="card-header"</span> for creating a card body section that will contain a heading.</p>
+			<div class="container-fluid">
+				<div class="row">
+					<div class="col">
+						<div class="card m-2">
+							<div class="card-header">This is a header text</div>
+							<img class="test" class="card-img-top" src="./img/img.jpg">
+							<div class="card-body">Image</div>
+							<h5 class="card-title">My Image</h5>
+							<p class="card-text">This is a wonderful image</p>
+						</div>
+						<div class="card-footer">This is a footer</div>
+					</div>
+				</div>
+			</div>
+		</section>
+	</body>
+</html>
