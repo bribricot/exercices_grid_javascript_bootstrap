@@ -16,8 +16,8 @@ console.log(status)
 //We can add string values together with a + sign. It will add the value together.
 bouquet = "Flowers" + "Vessel";
 
-// === equality operator, !== inequality operator, <= less than or equal to operator, >= greater than or equal to operator
-// We can compare using === in conditions, number, strings and booleans. 
+/* === equality operator, !== inequality operator, <= less than or equal to operator, >= greater than or equal to operator.
+We can compare using === in conditions, number, strings and booleans. */
 
 //A variable assignment is storing a value inside a variable
 
@@ -45,8 +45,8 @@ let solved = 20;
 let minimum = 10;
 let lostStreak = solved <= minimum;
 
-//What type is the result of joining a string with a number = a string.
-//What is the result of joining a string and a boolean = a string. 
+/* What type is the result of joining a string with a number = a string.
+What is the result of joining a string and a boolean = a string. */
 
 //Conditionnal statements
 if (true) {
@@ -79,8 +79,8 @@ if (showAlert) {
 	console.log("Your inbox is full.");
 	console.log("You can't receive any more emails.");
 }
-//Output: Your inbox is full.
-//You can't receive any more emails.
+/* Output: Your inbox is full.
+You can't receive any more emails.*/
 
 let hour = 9;
 
@@ -114,8 +114,9 @@ if (age <= 12) {
 let wallet = 3;
 wallet = wallet;
 
-//Because we can self-assign variables, we can increase or decrease variables set to numbers. 
-//Self assigning variables let us track data that changes over time. A user might add 2 dollars to a wallet then remove 1:
+/* Because we can self-assign variables, we can increase or decrease variables set to numbers. 
+Self assigning variables let us track data that changes over time. A user might add 2 dollars to a wallet then remove 1: 
+*/
 wallet = wallet + 2;
 wallet = wallet - 2;
 console.log(wallet);
@@ -136,18 +137,19 @@ let likes = 5;
 likes+=1;
 console.log(likes)
 
-//Decreasing by 3 : "-=3"
-//Increment Operator is placed after a variable's name. Same with decrement operator : "kudo--"
+/* Decreasing by 3 : "-=3"
+Increment Operator is placed after a variable's name. Same with decrement operator : "kudo--"*/
 let kudo = 5;
 kudo++;
 console.log(kudo);
 
-//Repeating Code with While Loops
-// while (true) {
-//	console.log("and again");
-//}
+/*Repeating Code with While Loops
+while (true) {
+	console.log("and again");
+}
+*/
 
-var keepPlaying = true;
+let keepPlaying = true;
 while (keepPlaying === true) {
 	console.log("Now Playing: Ryan Paris");
 	keepPlaying = false;
@@ -156,7 +158,7 @@ while (keepPlaying === true) {
 
 //Skip the loop by updating the autoPilotOn variable :
 
-var autoPilotOn = false;
+let autoPilotOn = false;
 while (autoPilotOn === true) {
 	console.log("Autopilot on: Vroooom!");
 	autoPilotOn = false;
@@ -164,20 +166,20 @@ while (autoPilotOn === true) {
 
 //Controlling the while loop
 
-var counter = 1;
+let counter = 1;
 while (counter < 4) {
 	console.log(counter);
 	counter++;
 }
 
 //Since the whole coded block runs, the order you write code affects what the console displays
-var counter1 = 0;
+let counter1 = 0;
 while (counter 1 < 5) {
 	console.log("*********------------");
 	counter++;
 }
 
-var counter2 = 0;
+let counter2 = 0;
 while (counter2 < 4) {
 	console.log("------------------------");
 	counter2++;
@@ -185,65 +187,97 @@ while (counter2 < 4) {
 
 //For loops make this program easier :
 
-for (var i = 0; i < 4; i++) {
+for (let i = 0; i < 4; i++) {
 	console.log("*********------------");
 }
 
-for (var i = 0; i < 4; i++) {
+for (let i = 0; i < 4; i++) {
 	console.log("------------------------");
 }
 
 //The code of a for loop is easier to read because the information for the times the loop repeats is inside the parentheses. i is the counter here.
 
-for (var i = 1; i < 5; i++) {
+for (let i = 1; i < 5; i++) {
 	console.log("Round" + i);
 }
 
-for (var index = 1; index < 5; index++) {
+for (let index = 1; index < 5; index++) {
 	console.log(index);
 }
 
 //Looping Downward
 
 //This for loop counts upward from 1 to 5. Let's learn how to change it to loop downward from 5 to 1:
-for (var i = 1; i < 6; i++) {
+for (let i = 1; i < 6; i++) {
 	console.loge(i);
 }
 // Output 1 2 3 4 5 
 
-for (var i = 5; i > 0; i--) {
+for (let i = 5; i > 0; i--) {
 // If i++ infinite loop
 	console.log(i);
 }
 
 // To INCLUDE 0 when counting down, we use <= instead of >.
 
-for (var i = 5; i >= 0; i--) {
+for (let i = 5; i >= 0; i--) {
 	console.log(i);
 }
 //Output 5 4 3 2 1 0 
 
 //What happens when we use i > 0 in the condition instead of i < 0 ? 
 
-for (var i = 5; i > 0; i--) {
+for (let i = 5; i > 0; i--) {
 	console.log(i)
 }
 //Output: The loop continues while i is greater than 0 so : 5 4 3 2 1 
 
 //Include 1 when counting down : 
-for (var i = 5; i >= 1; i--;) {
+for (let i = 5; i >= 1; i--;) {
 	console.log(i);
 }
 
 //Grouping values with Arrays : bigger apps group similar values, like the names of friends in a social network.
-var friend1 = "Tom";
-var friend2 = "Mia";
-var friend3 = "Lee";
+let friend1 = "Tom";
+let friend2 = "Mia";
+let friend3 = "Lee";
 
 //Rather than creating a variable for each friend's name we can group all of the values into an array using [ ].
-var friends = ["Tom", "Mia", "Lee"];
+let friends = ["Tom", "Mia", "Lee"];
 console.log(friends);
 
-//To create an empty array, we code var friends = [];
+//To create an empty array, we code let friends = [];
 
-//Changing Values in Arrays
+/*Changing Values in Arrays with a weather app where an array can store and update values. We can imagine an array like a chest of ddrawers. A drawer can store any variable or value, be it a string a boolean or a number.*/
+
+let temperatures = [17, 20, 26, 24];
+
+//Every element in a array has a numbered position called an index. That means the second element in temperatures is at index 1. 
+
+console.log(temperatures[ 1 ]);
+//Output: 20;
+
+//To change the temperature value at the second index, access it through temperatures[2], then use "=" to assign it a new value like 25.
+
+temperature[2] = 25;
+console.log(temperatures);
+//Output: [ 17,20,25, 24 ]
+
+//Pushing and Popping Arrays
+
+//To add a value like "groceries" to an array, we can code the array name toDo folloowed by a period "." then the instruction PUSH ("groceries"). The new value goes to the end of the aray.
+let toDo = ["call mom", "dishes"];
+toDo.push("groceries");
+console.log(toDo);
+//Output : ['call mom', 'dishes', 'groceries']
+
+//To remove the last element of the array, we coded the array name toDo, a period "." then the instruction POP variable.pop("elementofarray"). We can save the value removed by storing it in a variable
+let toDo = ["call mom", "dishes"];
+let chores = toDo.pop();
+console.log(chores);
+//Output : dishes
+
+let activeUsers = ["Sue", "Mike"];
+activeUsers.push("Jane");
+console.log(activeUsers);
+//Output: [ 'Sue', 'Mike', 'Jane' ]
