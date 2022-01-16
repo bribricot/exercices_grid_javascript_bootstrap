@@ -281,3 +281,69 @@ let activeUsers = ["Sue", "Mike"];
 activeUsers.push("Jane");
 console.log(activeUsers);
 //Output: [ 'Sue', 'Mike', 'Jane' ]
+
+let themes = ["classic", "dark mode"];
+let current = themes.pop();
+console.log(current);
+//Output : dark mode
+
+//Deciding with Arrays, count elements in array etc...
+
+let tasks = ["dishes", "windows", "vaccum"];
+console.log(tasks.length);
+//Output : 3
+
+let length = tasks.length;
+console.log(length);
+//Output : 3
+
+//We can use the length of an array to create condditionnal statements that depend on its number of elements.
+
+let tasks = ["dishes", "windows", "vaccum"];
+
+if (tasks.length > 0) {
+	console.log("There is a lot of work here :(");
+}
+
+//We can also use the length of an array to create for loops that go through all of its elements. For that we repeat a loop as many times as there are elements in the array.
+
+let coworkers = ["Ana", "Eve", "Sam"];
+
+for (let i = 0; i < 3; i++) {
+	console.log(i);
+}
+//Output : 0 1 2 
+
+//Repeat the for loop 3 times by specifying that "i" needs to be less than 3 :
+let animals = ["Cat", "Dog"];
+
+for (let i = 0; i < 3; i++) {
+	console.log(i);
+}
+//Output : 0 1 
+
+//Instead of specifying that "i" needs to be less than 3, we can also use the length of the array.
+let food = ["Milk", "Bread", "Cauliflower"];
+
+for (let i = 0; i < food.length; i++) {
+	console.log(i);
+}
+//Same output : 0 1 2 
+
+//The couter variable "i", stores the value 0 1 2 as the loop repeats. But 0 1 2 are also the indices of the elements in food, animals or coworkers.
+
+//Everytime the loop repeats, "i" stores an index of an element in the food, animals or coworkers array. We can use this index to access the element.
+let water = ["Evian", "Vittel", "Cristalline"];
+for (let i = 0; i < friends.length; i++) {
+	console.log(friends[i]);
+}
+//Output : Evian Vittel Cristalline
+
+//Take the loop for a spin: use the counter variable "i", as the index to display all the elements in cars:
+let cars = ["Toyota", "Lexus", "Opel"];
+for (let i = 0; i < cars.length; i++) {
+	console.log(cars[i]);
+}
+
+//Reusing Code with Functions
+
