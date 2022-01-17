@@ -538,5 +538,54 @@ isSameWord("bombastic");
 
 //An output is what a function displays in the console or what it returns. 
 
+//Functions with arrays as parameters.
 
+//Displaying the entier array
+function displayNames(names) {
+	console.log(names);
+}
+let students = ["Laurel", "Yanni"];
+displayNames(students);
+//Output : [ 'Laurel', 'Yanni' ]
 
+//We could display the length of the array.
+function displayNumberOfNames(names) {
+	console.log(names.length);
+}
+let pupils = ["Laura", "Caroline"];
+displayNumberOfNames(pupils);
+//Output: 2
+
+//Now, we use a single element of the array.
+function displayFirstName(names) {
+	console.log(names[0]);
+}
+let customer = ["Lili", "Cameron"];
+displayFirstName(customer);
+//Output: Lili
+
+//We can pass an array to a function because we want to return a part of it:
+function getFirstName(names) {
+	return names[0];
+}
+let villagers = ["Maria", "John"];
+let firstMember = getFirstName(villagers)
+console.log(firstMember)
+//Output: Maria
+
+//We can use multiple elements from an array to return a certain kind of output we need for the next step in our code.
+
+function getListOfNames(names) {
+	return names[0] + ", " + names[1];
+}
+let vacationers = ["Vera", "Martha"];
+let list = getListOfNames(vacationers);
+console.log(list);
+
+function displayGroupInfo(array) {
+	console.log(group.length);
+	console.log(group[1]);
+}
+let group = ["Lorenzo", "Tama"];
+displayGroupInfo(group);
+console.log(group);
