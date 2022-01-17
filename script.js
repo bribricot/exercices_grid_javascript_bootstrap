@@ -124,7 +124,7 @@ console.log(wallet);
 //Variables set to strings work the same way.
 let name = "Account name: ";
 name = name + "Elton";
-name = name + "John",
+name = name + " John",
 console.log(name);
 
 //Assigning with operators
@@ -173,11 +173,11 @@ while (counter < 4) {
 }
 
 //Since the whole coded block runs, the order you write code affects what the console displays
-let counter1 = 0;
-while (counter 1 < 5) {
-	console.log("*********------------");
-	counter++;
-}
+// let counter1 = 0;
+// while (counter1 < 5) {
+// 	console.log("*********------------");
+// 	counter1++;
+// }
 
 let counter2 = 0;
 while (counter2 < 4) {
@@ -188,7 +188,7 @@ while (counter2 < 4) {
 //For loops make this program easier :
 
 for (let i = 0; i < 4; i++) {
-	console.log("*********------------");
+	console.log("*********---------------");
 }
 
 for (let i = 0; i < 4; i++) {
@@ -209,7 +209,7 @@ for (let index = 1; index < 5; index++) {
 
 //This for loop counts upward from 1 to 5. Let's learn how to change it to loop downward from 5 to 1:
 for (let i = 1; i < 6; i++) {
-	console.loge(i);
+	console.log(i);
 }
 // Output 1 2 3 4 5 
 
@@ -233,7 +233,7 @@ for (let i = 5; i > 0; i--) {
 //Output: The loop continues while i is greater than 0 so : 5 4 3 2 1 
 
 //Include 1 when counting down : 
-for (let i = 5; i >= 1; i--;) {
+for (let i = 5; i >= 1; i--) {
 	console.log(i);
 }
 
@@ -259,16 +259,16 @@ console.log(temperatures[ 1 ]);
 
 //To change the temperature value at the second index, access it through temperatures[2], then use "=" to assign it a new value like 25.
 
-temperature[2] = 25;
+temperatures[2] = 25;
 console.log(temperatures);
 //Output: [ 17,20,25, 24 ]
 
 //Pushing and Popping Arrays
 
 //To add a value like "groceries" to an array, we can code the array name toDo folloowed by a period "." then the instruction PUSH ("groceries"). The new value goes to the end of the aray.
-let toDo = ["call mom", "dishes"];
-toDo.push("groceries");
-console.log(toDo);
+let toDoList = ["call mom", "dishes"];
+toDoList.push("groceries");
+console.log(toDoList);
 //Output : ['call mom', 'dishes', 'groceries']
 
 //To remove the last element of the array, we coded the array name toDo, a period "." then the instruction POP variable.pop("elementofarray"). We can save the value removed by storing it in a variable
@@ -289,11 +289,11 @@ console.log(current);
 
 //Deciding with Arrays, count elements in array etc...
 
-let tasks = ["dishes", "windows", "vaccum"];
-console.log(tasks.length);
+let reminders = ["dishes", "windows", "vaccum"];
+console.log(reminders.length);
 //Output : 3
 
-let length = tasks.length;
+let length = reminders.length;
 console.log(length);
 //Output : 3
 
@@ -346,4 +346,197 @@ for (let i = 0; i < cars.length; i++) {
 }
 
 //Reusing Code with Functions
+
+//Fonctions are used to group related code and perform the task in one place.
+//We name a function by using camel case.
+
+function greetUser() {
+	console.log("Good morning");
+	console.log("Welcome back");
+}
+// To run the code we need to call the function.
+greetUser();
+
+//Creating parameters
+
+// Sometimes functions need specific information to help them perform their tasks. Like a function that adds a player's name to a team.
+
+function greetRon() {
+	let nickname = "Ron";
+	console.log("Hello, " + name);
+} 
+greetRon();
+
+//We can pass a specific information without repeating code:
+function choose(choice) {
+	console.log("I choose : " + choice);
+}
+choose("Pikachu");
+choose("Charizard");
+
+//To pass a value to a function, we first add a variable called a parameter inside the parentheses of the function. A parameter acts as a special variable that stores a value.
+function displayHalf(number) {
+	let half = number / 2;
+	console.log(half);
+}
+displayHalf(10);
+//Output: 5
+
+//Returning Values
+//This will returns a value to the code that called it to help perform its task.
+
+function timesTen(number) {
+	let operation = number * 10;
+	return operation;
+}
+//Output : timesTen(4) = 40
+
+function greaterThanTen(number) {
+	let isGreater = number > 10;
+	return isGreater;
+}
+//Output : greaterThanTen(4) = false
+
+/* We can use the return value of a function like any value by calling the function. Here, we call userAge(22) to use its value. 
+We can store the return value in a variable too. Here we store the return value in "ageResult" and display it in the console. */
+
+function userAge(number) {
+	let age = "User age: " + number;
+	return age;
+}
+let ageResult = userAge(12);
+console.log(ageResult);
+
+/* If we don't include a return statement inside the function, the function returns the value "undefined" instead.
+A function can return a signe value at a time.
+We use the return value by calling the function and use it like any other value.
+We store the return value by calling the function and store it in a variable. */
+
+function giveMeTen() {
+	return 10;
+}
+console.log(giveMeTen());
+
+function addGreating(user) {
+	let greeting = "Greetings " + user;
+	return greeting
+}
+let salutation = addGreating("Lucie");
+console.log(salutation);
+//Output = "Greetings Lucie"
+
+function lessThanFive(number) {
+	let lessThan = number < 5;
+	return lessThan;
+}
+let calculus = lessThanFive(10);
+console.log(calculus);
+//Output = false
+
+//Using Multiple Parameters
+
+//Functions need multiple parameters to work with two or more pieces of data, like a first and last name.
+
+function display(firstName, lastName) {
+	console.log(firstName + " " + lastName);
+}
+display("John", " Elton");
+
+//Values get passed to a function in the same order parameters do. 
+
+function displayWinners(first, second) {
+	console.log("1st: " + first);
+	console.log("2nd: " + second);
+}
+displayWinners("Amy", "Jake");
+//Output: 1st: Amy 2nd: Jake
+
+function displayAnimals(first, second, third) {
+	console.log(first + " " + second + " " + third);
+}
+displayAnimals("duck", "goose", "elephant");
+//Output: duck goose elephant
+
+//When we pass values to a function with multiple parameters, the values and the parameters have to be in the same order. 
+
+function createID(name, year) {
+	return name + year + "@gmail.com";
+}
+let email = createID("dupuis", "1994");
+console.log(email);
+
+//Understanding functions
+/* Functions names should be descriptive and let us know the main thing the function does.
+Functions are actions, so their names should contain at least on verb. When using multiple words, the verb is a prefix, like "sumTotal". */
+
+function sumTotal(price, tax) {
+	console.log(price + tax);
+}
+sumTotal(1000, 240);
+
+//Functions that mainly return a valut without changing it in any way start with verbs like "get"
+
+function getName(fullName) {
+	return fullName[0];
+}
+let fullName = ["Don", "Juan"]
+let appelation = getName(fullName);
+console.log(appelation);
+//output : Don
+
+//As a special case, functions that return boolean values often star with "is"
+
+function isFreezing(temperature) {
+	return temperature < 0;
+}
+let freezing = isFreezing(-3);
+console.log(freezing);
+//output : true
+
+//Function names shouldd be consistent. If one function is called "calculateDifference", a similar function should have the same verb prefix.
+
+function calculateSum(a, b) {
+	return a + b;
+}
+
+function calculateDifference(a, b) {
+	return a - b;
+}
+
+let sum = calculateSum(20, 10);
+let difference = calculateDifference(10, 5);
+
+console.log(sum);
+console.log(difference);
+
+//While we don't have to remember the code of every function un a program, we ddo have to pass the right input to get the right output:
+
+let author = "John Steinback";
+let title = "Tortilla Flat";
+let date = "1991";
+
+function displayAuthor() {
+	return author;
+}
+function displayTitle() {
+	return title;
+}
+
+function displayDate() {
+	return date;
+}
+console.log(title);
+displayTitle(title);
+displayDate(date);
+
+//A function input can be a different type than the output 
+function isSameWord(word) {
+	console.log(word === "bombastic");
+}
+isSameWord("bombastic");
+//Output : true
+
+//An output is what a function displays in the console or what it returns. 
+
+
 
