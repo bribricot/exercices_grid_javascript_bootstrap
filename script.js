@@ -867,13 +867,96 @@ let drivepossible = canDrive("17");
 console.log(drivepossible);
 //Output: You can drive
 
+//*Calling loops in functions and influence their outputs.*
 
+function displayNumbers() {
+	for (var i = 1; i <= 3; i++) {
+		console.log("Let's go in " + i);
+	}
+}
+displayNumbers();
 
+//We can use parameters to get different resuluts from the same loop. 
 
+function displayExercices(number, message) {
+	for (var i = 1; i < 10; i++) {
+		console.log( i + message );
+	}
+}
+displayExercices(5, " Jumping Jack");
+displayExercices(5, " Push-Up");
+displayExercices(5, " Squat");
 
+function displayNumbersAndMessage(message) {
+	for (var i = 0; i < 10; i++) {
+		console.log(i + message);
+	}
+}
+displayNumbersAndMessage(" snow flakes");
 
+//We can also use parameters to change opertaions like multiplication. This one function is enough to create different multiplication tables.
 
+function displayMultiplieddNumbers(multiplier) {
+	for (var i = 0; i <= 10; i++) {
+		console.log(i * multiplier);
+	}
+}
+displayMultiplieddNumbers(10);
 
+//When we use a parameter in the function, depending on the value passed to it, the function displays a different message.
 
+function displayPageNumbers(page) {
+	for (var i = 1; i <= 20; i++) {
+		console.log(page + i);
+	}
+}
+displayPageNumbers("Page ");
 
+//We can pass values as parameters to control how many times a loop gets executed. Display "Beetlejuice" three times by passing a number : 
 
+function summonBeetlejuice (title, times) {
+	for (var i = 0; i < times; i++) {
+		console.log("I've seen " + "Beetlejuice " + times + " times it was great");
+	}
+}
+summonBeetlejuice("Beetlejuice", 3);
+
+//To controle where a loop starts, we use a parameter to set the counter variable's value. This code displays the days left in a month.
+
+function displayDaysLeft(day) {
+	for (var i = day; i < 31; i++) {
+		console.log(i);
+	}
+}
+displayDaysLeft(26);
+
+//We can use parameters to set both the start and end values. This code only displays numbers in between the values we passed to the function. 
+
+function displayInterval(start, end) {
+	for (var i = start; i < end; i++) {
+		console.log(i);
+	}
+}
+displayInterval(26, 51);
+
+function drawStars(times) {
+	for (var i = 0; i < times; i++) {
+		console.log("*");
+	}
+}
+drawStars(5);
+
+function displaySign(sign, times) {
+	for (var i = 0; i < times; i++) {
+		console.log(sign);
+	}
+}
+displaySign("#", 3);
+
+function displayCountdown(start) {
+	for (var i = start; i > 0; i--) {
+		console.log(i);
+	}
+console.log("Launch!");
+}
+displayCountdown(6);
