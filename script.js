@@ -802,7 +802,7 @@ function isNumberGreater(a, b) {
 }
 isNumberGreater (13, 10);
 
-//If we want to provide output for the wrong input, we add an "else" statement to the function.
+//If we want to provide output for the wrong input, we add an "else" statement to the function. We add a conditional statement inside when the function's behavior changes based on its parameters.
 
 function checkPassword(word) {
 	if (word === "123456") {
@@ -812,6 +812,67 @@ function checkPassword(word) {
 	}
 }
 checkPassword("12345");
+//Output: Retry please
+
+//We fifgure out how many values we need to pass to a function by checking how many parameters the conditional statement needs.
+
+function whichNumberGreater(a, b) {
+	if (a > b) {
+		console.log(a + " is greater");
+	} else {
+		console.log(a + " isn't greater");
+	}
+}
+whichNumberGreater(10, 20);
+//Output: 10 isn't greater
+//Because we're talking about the a value which is represented by the number 10. So we display his condition not the 20 one.
+
+//*Stopping functions with return statements to exit functions at any time, even in the middle of the code*
+
+/*Anything after a return statement doesn't execute. Here, the display statement after the return statement doesn't work.
+If we have multiple return statements, whichever one gets run first exits the function.*/
+
+function multiplyByTen(number) {
+	return number * 10;
+	console.log("This won't get executed");
+	return "This line doesn't get executed either";
+}
+
+let multiplication = multiplyByTen(40);
+console.log(multiplication);
+
+/*If we use conditional statements, we can use return to stop a function at different parts of the code based on the input.
+Return statements at the end of the function and outside of any conditional statement are run only if no conditions have been met like "No Discount" */
+function getDiscount(age) {
+	if (age >= 65) {
+		return "50% OFF";
+	}
+return "No Discount";
+}
+
+let discount = getDiscount(67);
+console.log(discount);
+//Output: 50% OFF
+
+function canDrive(age) {
+	if (age > 16) {
+		return "You can drive";
+	} else if (age === 16) {
+		return "You can pass your licence";
+	}
+return "You cannot drive yet";
+}
+
+let drivepossible = canDrive("17");
+console.log(drivepossible);
+//Output: You can drive
+
+
+
+
+
+
+
 
 
 
