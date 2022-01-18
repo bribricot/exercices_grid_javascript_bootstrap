@@ -248,7 +248,7 @@ console.log(friends);
 
 //To create an empty array, we code let friends = [];
 
-/*Changing Values in Arrays with a weather app where an array can store and update values. We can imagine an array like a chest of ddrawers. A drawer can store any variable or value, be it a string a boolean or a number.*/
+/*Changing Values in Arrays with a weather app where an array can store and update values. We can imagine an array like a chest of drawers. A drawer can store any variable or value, be it a string a boolean or a number.*/
 
 let temperatures = [17, 20, 26, 24];
 
@@ -493,7 +493,7 @@ let freezing = isFreezing(-3);
 console.log(freezing);
 //output : true
 
-//Function names shouldd be consistent. If one function is called "calculateDifference", a similar function should have the same verb prefix.
+//Function names should be consistent. If one function is called "calculateDifference", a similar function should have the same verb prefix.
 
 function calculateSum(a, b) {
 	return a + b;
@@ -538,7 +538,7 @@ isSameWord("bombastic");
 
 //An output is what a function displays in the console or what it returns. 
 
-//Functions with arrays as parameters.
+//*Functions with arrays as parameters.*
 
 //Displaying the entier array
 function displayNames(names) {
@@ -597,9 +597,9 @@ let scientist = ["Vera", "Rubin"];
 let association = getFullName(scientist);
 console.log(scientist);
 
-//Objects
+//**Objects**
 
-let favoriteFoodd = "Lasagna";
+let favoriteFood = "Lasagna";
 let petName = "Garfield";
 
 //Instead of using two separate variables to describe our cat, we can group these into one variable, known as an object.
@@ -655,7 +655,7 @@ Methods are somilar to regular functions. Meaning we can include parameters and 
 
 let tiger = {
 	name: "Balto",
-	scream: function (word) {
+	scream: function(word) {
 		return "Grrrr, " + word;
 	}
 };
@@ -667,7 +667,7 @@ let phone = {
 	ring: function() {
 		console.log("Ding ding ding!");
 	},
-	call: function(number){
+	call: function(number) {
 		console.log("Calling " + number);
 	},
 };
@@ -675,7 +675,7 @@ let phone = {
 phone.ring();
 phone.call();
 
-//How to use methods to access and update our object's properties.
+//*How to use methods to access and update our object's properties.*
 
 //The keyword "THIS" refers to the object that contains the method. In this case "cereal"
 let cereal = {
@@ -699,5 +699,120 @@ let laundry = {
 };
 
 laundry.changeLaundry();
+//Output: Ariel
+
+//The "this" keyword can only be used to access an object's properties INSIDE the object's method. That's why outside we type "laundry" instead of this.
+
+//The keyword "this" refers to the object that contains the method. In this case: "meal".
+let meal = {
+	ingredients: "fish",
+	display: function() {
+		console.log(this);
+	}
+};
+meal.display();
+//Output: Object { ingredients: "fish", display: display() }
+
+//For updating the object's properties from inside its methods, we can use "this" followed by a comma and the properties that we want to update. 
+
+let sport = {
+	type: "bike",
+	changeSportDisplay: function() {
+		this.name = "walk";
+		console.log(this.name);
+	}
+};
+sport.changeSportDisplay();
+//Output: walk
+
+//Again : "this" keyword can only be used to access an object's properties INSIDE the object's method. 
+
+//**Reusable Programs, building functions that change their output based on input.**
+
+//*Nesting conditionals statements inside functions*
+
+function displayMessage(message) {
+	console.log(message);
+}
+displayMessage("Approved");
+
+//We can add other code blocks inside a function. When we do that, the extra pair of braces let us know which instructions belong where.
+
+function isRentingAge(age) {
+	if (age >= 21) {
+		console.log("Approved");
+	}
+}
+isRentingAge(26);
+//Output: Approved
+
+//Wrapping if statements inside functions helps us organize and reuse our codde. Now we can use the same if statement with a function call like so : isRentingAge(26); 
+
+//Instructions outside of nested code blocks still get executed, even if the code inside the conditionnal statement gets skipped
+
+function isBuyable(game) {
+	if (game >= 70) {
+		console.log("Approved");
+	}
+	console.log("Check complete");
+}
+isBuyable(71);
+//Output: Check complete
+//Not "Approved" because it's skipped.
+
+function isLying(boolean) {
+	console.log("Welcome to the lie Detector 3000");
+	if (boolean === false) {
+		console.log("He's lying");
+	}
+}
+isLying(false);
+//Output: Welcome to the lie Detector 3000. He's lying.
+
+function getTaxedSalary(salary) {
+	if (salary > 2100) {
+		salary = salary - 500;
+	}
+return salary;
+}
+let income = getTaxedSalary(2100);
+console.log(income);
+//Output: 2100
+
+//*Using conditions and functions*
+
+/* When creating functions, we have to think about when and why we need conditional statements inside of them.
+For example anytime you enter a password, a function with a conditionnal statement decides what message to show you.*/
+
+function applySeniorDiscount(age) {
+	if (age >= 65) {
+		console.log(age + " year old has 50% off");
+	}
+}
+applySeniorDiscount(18);
+applySeniorDiscount(67);
+
+//Output: 67 year old has 50% off
+
+//Another way conditionnals get used inside functions is when they need to compare two values.
+function isNumberGreater(a, b) {
+	if (a > b) {
+		console.log(a + " is greater than " + b);
+	} 
+}
+isNumberGreater (13, 10);
+
+//If we want to provide output for the wrong input, we add an "else" statement to the function.
+
+function checkPassword(word) {
+	if (word === "123456") {
+		console.log("Login complete");
+	} else {
+		console.log("Retry please");
+	}
+}
+checkPassword("12345");
+
+
 
 
