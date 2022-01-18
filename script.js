@@ -589,3 +589,115 @@ function displayGroupInfo(array) {
 let group = ["Lorenzo", "Tama"];
 displayGroupInfo(group);
 console.log(group);
+
+function getFullName(group) {
+	return group[1] + " " + group[0];
+}
+let scientist = ["Vera", "Rubin"];
+let association = getFullName(scientist);
+console.log(scientist);
+
+//Objects
+
+let favoriteFoodd = "Lasagna";
+let petName = "Garfield";
+
+//Instead of using two separate variables to describe our cat, we can group these into one variable, known as an object.
+
+let pet = {
+	name: "Salto",
+	meal: "Dry fish"
+};
+
+/* We create objects similarly to variables, with the keyword var, let or const followed by a name and a equal sign inside curly braces. Don't forget to pu ";" at the end for execution.
+The information inside an object is known as the object's properties. The properties go insied the object's curly braces.
+Creating properties by starting with a name, followed by a colon and a value.
+Numbers, strings, booleans, arrays, other objects are the types of information that can be grouped into the object's properties*/
+
+
+//Object with more properties 
+
+let person = {
+	name: "Carla Misty", 
+	nickname: "Queen",
+	occupation: "PR"
+};
+console.log(person.nickname);
+//Output: Queen
+
+//After accessing a property value, we can update it using an equal sign:
+person.nickname = "Candy";
+console.log(person);
+//Output : Object { name: "Carla Misty", nickname: "Candy", occupation: "PR" }
+
+//Using object method with functions that are closely related to our objects
+
+let dog = {
+	action: "Go get it"
+};
+
+function bark() {
+	console.log("Woof");
+}
+
+//But it's possible to do it inside of it. 
+
+let cat = {
+	action: "Hunt the mouse",
+	meow: function() {
+
+	}
+};
+
+/* We create object methods like properties, starting with a name and a colon, followed by the keyword function.
+Foor calling these methods, we have to take the object name and then after a period, parentheses then ";".
+Methods are somilar to regular functions. Meaning we can include parameters and return statements as well. */
+
+let tiger = {
+	name: "Balto",
+	scream: function (word) {
+		return "Grrrr, " + word;
+	}
+};
+console.log(tiger.scream("dinner is served."));
+
+let phone = {
+	brand: "Xiaomi",
+	number: "555-555-555",
+	ring: function() {
+		console.log("Ding ding ding!");
+	},
+	call: function(number){
+		console.log("Calling " + number);
+	},
+};
+
+phone.ring();
+phone.call();
+
+//How to use methods to access and update our object's properties.
+
+//The keyword "THIS" refers to the object that contains the method. In this case "cereal"
+let cereal = {
+	name: "Crunch",
+	display: function() {
+		console.log(this.name);
+	}
+};
+cereal.display();
+//Output when just this: Object { name: "Crunch", display: display() }
+//Output when this.name: Crunch
+
+//Similarly, we can use "this" followed by a period to update the object's properties from inside its methods.
+
+let laundry = {
+	name: "Skip",
+	changeLaundry: function() {
+		this.name = "Ariel";
+		console.log(this.name);
+	}
+};
+
+laundry.changeLaundry();
+
+
