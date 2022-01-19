@@ -833,7 +833,7 @@ whichNumberGreater(10, 20);
 If we have multiple return statements, whichever one gets run first exits the function.*/
 
 function multiplyByTen(number) {
-	return number * 10;
+	//return number * 10;
 	console.log("This won't get executed");
 	return "This line doesn't get executed either";
 }
@@ -960,3 +960,6 @@ function displayCountdown(start) {
 console.log("Launch!");
 }
 displayCountdown(6);
+
+//*Loooping over arrays*
+
