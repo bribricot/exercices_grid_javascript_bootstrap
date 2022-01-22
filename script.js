@@ -746,7 +746,7 @@ function isRentingAge(age) {
 isRentingAge(26);
 //Output: Approved
 
-//Wrapping if statements inside functions helps us organize and reuse our codde. Now we can use the same if statement with a function call like so : isRentingAge(26); 
+//Wrapping if statements inside functions helps us organize and reuse our code. Now we can use the same if statement with a function call like so : isRentingAge(26); 
 
 //Instructions outside of nested code blocks still get executed, even if the code inside the conditionnal statement gets skipped
 
@@ -896,12 +896,12 @@ displayNumbersAndMessage(" snow flakes");
 
 //We can also use parameters to change opertaions like multiplication. This one function is enough to create different multiplication tables.
 
-function displayMultiplieddNumbers(multiplier) {
+function displayMultipliedNumbers(multiplier) {
 	for (let i = 0; i <= 10; i++) {
 		console.log(i * multiplier);
 	}
 }
-displayMultiplieddNumbers(10);
+displayMultipliedNumbers(10);
 
 //When we use a parameter in the function, depending on the value passed to it, the function displays a different message.
 
@@ -1039,14 +1039,145 @@ searchLight(lights, searches);
 
 //We access array elements for whithin a function, by passing the array to the function.
 
-let prices = [99, 129, 159];
-let discounts = 0.5;
+let prices = [99, 129, 159]
+let discounts = 0.5
 
 function applyDiscount(prices, discounts) {
 	for (let i = 0; i < prices.length; i++) {
-		console.log(prices[i] * discounts);
+		console.log(prices[i] * discounts)
 	}
 }
 applyDiscount(prices, discounts);
+console.log(applyDiscount(prices, discounts))
 
+//**Arow functions**
 
+function getCar() {
+	return "Toyota"
+}
+console.log(getCar())
+
+//Same output as: 
+
+let auto = () => "Toyota"
+console.log(auto())
+
+//Arrow functions are type of anonymour function, meaning that they don't have a function name. If we want to call these functions, we need to store them insided a variable and call the variable with parentheses at the end
+
+let game = () => {
+	return "Mario";
+}
+console.log(game())
+
+//With arrow functions, we don't need the function keyword or the function name. That means the first thing we start off is the parentheses but you don't have to add ";" at the end. 
+
+function getCandy() {
+	return "Haribo"
+}
+
+let candy = () => {
+	return "Twix"
+}
+
+//Like with normal functions, we can add parametes insided the parentheses and then use the parameters insided the function.
+
+function getFood(caddie) {
+	return "trolley" + caddie
+}
+
+let shopping = (caddie) => {
+	return "trolley" + caddie
+}
+
+console.log(shopping(" pasta"));
+
+// Right after the parentheses and before the opening curly brace is where we add the arrow operator =>. We use this operator right before the code block or expression we want the functioon to execute.
+
+//Just like with traditionnal functions, we use curly braces {} to contain an arrow function's code block.
+
+//If an arrow function only has one statement, we can leave out both the curly braces and the return keywordd to get some very short code:
+
+const coffee = () =>  "Orafio"
+
+//Where ddo we add the arrow operator => : after the parentheses and before the opening curly brace
+
+//What do curly braces {} do in an arrow function : they contain the code block 
+
+//If we want to shorten the code remove the curly braces and the return keyword. 
+
+//We call the arrow function with parentheses because it's necessary to say that we want the executed form.
+
+const getVehiclesCount = () => 400
+console.log(getVehiclesCount())
+
+//*Arrow function with parameters
+
+const getPrice = (discount) => 500 - (discount * 500)
+console.log(getPrice(0.25))
+//Output: 375
+
+//Same as:
+
+// let startingpoint = 500
+// let sales = 0.25;
+
+// function applySale(startingpoint, sales) {
+// 		console.log(startingpoint - (sales * startingpoint))
+// }
+// console.log(applySale())
+
+//Parameters in arrow functions are similar to parameters in normal functions. Code an arrow function that uses total as a parameter.
+const getPrices = total => {
+	const discount = 0.25
+	return total - (discount * total)
+}
+console.log(getPrices(500))
+//Output : 375
+
+// In arrow functions, we don't have to add the parentheses if we have only one parameter, so "(total)" is the same as "total".
+
+//Parameter values are set to undefined by default. If a function call doesn't pass a value the function will use undefined as the value.
+//Call the getPrices() function below to see it display Nan, which means it's an undefined value.
+
+const getTaxes = total => {
+	const tax = 0.25
+	return total + (tax * total)
+}
+console.log(getTaxes());
+//Output: NaN
+
+//To avoid undefined values, we specify the default value inside the parentheses. Set the default parameter value inside the parenthesis to total=200.
+
+const getSales = (total = 500) => {
+	const discount = 0.25
+	return total - (discount * total)
+}
+console.log(getSales())
+//Output : 375
+
+//To use multiple parameters, we add the nex parameter in the parenthesis and seperate it from the rest by adding a comma ","
+
+const getSalary = (total = 1200, discount = 5) => total - (discount / 100 * total)
+console.log(getSalary())
+
+//Arrow functions let us have more compact and concise code. How we write them depends on the parameters we use and the code block size. These functions will be essential later on when we'll use them in more complex code like React.
+
+const getSizes = total => {
+	const repair = 0.6
+	return total - (repair * total)
+}
+console.log(getSizes(100))
+//Output: 40
+
+const getRatio = (nom, denom = 2) => {
+	return nom / denom
+}
+console.log(getRatio(30, 2))
+//Output: 15
+
+const getSquare = (number = 0) => number * number
+console.log(getSquare(5))
+//Ouput: 25
+
+const getArea = (length, width = 3) => length * width
+console.log(getArea(5))
