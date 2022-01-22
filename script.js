@@ -1186,3 +1186,42 @@ console.log(getArea(5))
 
 //** Template literals**
 
+//With template literals it's easier to addd variables and expressions inside of strings. Take a look below at how template literals achieve the same result as the longer method above it. 
+
+let fruit = "peach"
+console.log("I'm a " + fruit + "!")
+console.log(`I'm a ${fruit}!`)
+
+let cake = `Chocolate`
+console.log(cake)
+
+//To easily combine variables with string literals, we use the ${name} syntax where name is a variable 
+
+let category = `pie`;
+let pie =`${fruit} ${category}`
+console.log(pie)
+//Output: peach pie
+
+//We can also perform operations inside a string literal by adding expressions inside the braces of ${}
+
+let quantity = 20
+let give = 10
+
+let cost = `Total cost: ${quantity * give}`
+console.log(cost)
+
+//When calling a function, we leave out the parenthesis () if we're passing a string literal as an argument to the function. Let's pass the string literal Jane while calling the bike function
+
+const bike = model => {
+	return `I'm a ${model}`
+}
+console.log(bike`Giant`)
+
+//**Classes**
+
+
+
+
+
+
+
