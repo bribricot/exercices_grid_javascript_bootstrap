@@ -870,7 +870,7 @@ console.log(drivepossible);
 //*Calling loops in functions and influence their outputs.*
 
 function displayNumbers() {
-	for (var i = 1; i <= 3; i++) {
+	for (let i = 1; i <= 3; i++) {
 		console.log("Let's go in " + i);
 	}
 }
@@ -879,7 +879,7 @@ displayNumbers();
 //We can use parameters to get different resuluts from the same loop. 
 
 function displayExercices(number, message) {
-	for (var i = 1; i < 10; i++) {
+	for (let i = 1; i < 10; i++) {
 		console.log( i + message );
 	}
 }
@@ -888,7 +888,7 @@ displayExercices(5, " Push-Up");
 displayExercices(5, " Squat");
 
 function displayNumbersAndMessage(message) {
-	for (var i = 0; i < 10; i++) {
+	for (let i = 0; i < 10; i++) {
 		console.log(i + message);
 	}
 }
@@ -897,7 +897,7 @@ displayNumbersAndMessage(" snow flakes");
 //We can also use parameters to change opertaions like multiplication. This one function is enough to create different multiplication tables.
 
 function displayMultiplieddNumbers(multiplier) {
-	for (var i = 0; i <= 10; i++) {
+	for (let i = 0; i <= 10; i++) {
 		console.log(i * multiplier);
 	}
 }
@@ -906,7 +906,7 @@ displayMultiplieddNumbers(10);
 //When we use a parameter in the function, depending on the value passed to it, the function displays a different message.
 
 function displayPageNumbers(page) {
-	for (var i = 1; i <= 20; i++) {
+	for (let i = 1; i <= 20; i++) {
 		console.log(page + i);
 	}
 }
@@ -915,7 +915,7 @@ displayPageNumbers("Page ");
 //We can pass values as parameters to control how many times a loop gets executed. Display "Beetlejuice" three times by passing a number : 
 
 function summonBeetlejuice (title, times) {
-	for (var i = 0; i < times; i++) {
+	for (let i = 0; i < times; i++) {
 		console.log("I've seen " + "Beetlejuice " + times + " times it was great");
 	}
 }
@@ -924,7 +924,7 @@ summonBeetlejuice("Beetlejuice", 3);
 //To controle where a loop starts, we use a parameter to set the counter variable's value. This code displays the days left in a month.
 
 function displayDaysLeft(day) {
-	for (var i = day; i < 31; i++) {
+	for (let i = day; i < 31; i++) {
 		console.log(i);
 	}
 }
@@ -933,28 +933,28 @@ displayDaysLeft(26);
 //We can use parameters to set both the start and end values. This code only displays numbers in between the values we passed to the function. 
 
 function displayInterval(start, end) {
-	for (var i = start; i < end; i++) {
+	for (let i = start; i < end; i++) {
 		console.log(i);
 	}
 }
 displayInterval(26, 51);
 
 function drawStars(times) {
-	for (var i = 0; i < times; i++) {
+	for (let i = 0; i < times; i++) {
 		console.log("*");
 	}
 }
 drawStars(5);
 
 function displaySign(sign, times) {
-	for (var i = 0; i < times; i++) {
+	for (let i = 0; i < times; i++) {
 		console.log(sign);
 	}
 }
 displaySign("#", 3);
 
 function displayCountdown(start) {
-	for (var i = start; i > 0; i--) {
+	for (let i = start; i > 0; i--) {
 		console.log(i);
 	}
 console.log("Launch!");
@@ -962,4 +962,91 @@ console.log("Launch!");
 displayCountdown(6);
 
 //*Loooping over arrays*
+
+//How to use functions to go over arrays and manipulate their values whenever we want, like when we click a button.
+
+let grades = [91, 66, 77, 84, 66];
+let search = 66;
+
+function searchGrade(gradeds, search) {
+	for (let i = 0; i < grades.length; i++) {
+		if (grades[i] === search) {
+			console.log("This is the correct grade");
+			break;
+		}
+	}
+}
+searchGrade(grades, search);
+//Output: This is the correct grade.
+
+//Functions are useful when we want to execute reusable code. To access array elements using the searchGrade function, let's pass the grades array when calling the function.
+
+let localisation = [48.89684744988406, 2.2918054818719025];
+
+function searchLocalisation(localisation) {
+	console.log(grades);
+}
+searchLocalisation(grades);
+//Output: [ 48.89684744988406, 2.2918054818719025 ]
+
+//If we want to access elements stored in multiple arrays using the same function, we pass the arrays as arguments when calling that function. Let's code the seconde array latitude, when calling searchPosition()
+
+let latitude = [48.89684744988406, 48.89684744988407];
+let longitude = [2.2918054818719025, 2.2918054818719026];
+
+function searchPosition(latitude, longitude) {
+	console.log(latitude);
+	console.log(longitude);
+}
+searchPosition(latitude, longitude);
+//Output : [ 48.89684744988406, 48.89684744988407 ] [ 2.2918054818719025, 2.2918054818719026 ]
+
+//once we've passed an array to a function, we can iterate over the array elements. Create a for loop to iterate through all grades elements.
+
+let plants = [1, 2, 44, 67];
+
+function searchPlants(plants) {
+	let len = plants.length;
+	for (let i = 0; i < len; i++) {}
+}
+searchPlants(plants);
+
+//To retrieve each array element inside a for loop, we use the syntax array[i], where "i" is the current iteration, and array is the array name. Let's write the code to retrieve individual pens elements. 
+
+let pens = [1, 6, 7, 29];
+
+function searchPens(pens) {
+	for (let i = 0; i < pens.length; i++) {
+		console.log(pens[i]);
+	}
+}
+searchPens(pens);
+
+//By using a function, an array, and another parameter, we can do a lot. For example, let's search for the element 44 in the lights array by passing lights and then search to the searchLight function.
+
+let lights = [12, 13, 14, 15];
+let searches = 44;
+
+function searchLight (lights, searches) {
+	for (let i = 0; i < lights.length; i++) {
+		if (lights[i] === searches) {
+			console.log("This is the correct light");
+			break;
+		}
+	}
+}
+searchLight(lights, searches);
+
+//We access array elements for whithin a function, by passing the array to the function.
+
+let prices = [99, 129, 159];
+let discounts = 0.5;
+
+function applyDiscount(prices, discounts) {
+	for (let i = 0; i < prices.length; i++) {
+		console.log(prices[i] * discounts);
+	}
+}
+applyDiscount(prices, discounts);
+
 
