@@ -1219,6 +1219,28 @@ console.log(bike`Giant`)
 
 //**Classes**
 
+//As we code complex programs, we'll need to create many similar but distinct objects. For example, all the books in the library. But creating a new object for thousands of books would take a lot of time and could lead to errors.
+
+let book100 = {
+	author: "Shakespear",
+	title: "Da Vinci Code"
+}
+console.log(book100)
+
+//To make this process less error-prone and more efficient, we can use data structures called classes as templates.
+
+//Once we create a template with the properties we'll want for all similar objects, we'll want for all similar objects, we can use it to create new objects faster.
+
+//To create new objects, classes uppercase and classes need a special method called the constructor(). This method sets the property values for a new object.
+
+//We need a way of specifying the unique values a new object will have. We do that by sending parameters to the constructor method. 
+
+
+class Book {
+	constructor(author, title) {
+	}
+}
+
 
 
 
