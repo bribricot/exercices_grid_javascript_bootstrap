@@ -1227,19 +1227,37 @@ let book100 = {
 }
 console.log(book100)
 
-//To make this process less error-prone and more efficient, we can use data structures called classes as templates.
+/* To make this process less error-prone and more efficient, we can use data structures called classes as templates.
 
-//Once we create a template with the properties we'll want for all similar objects, we'll want for all similar objects, we can use it to create new objects faster.
+* Once we create a template with the properties we'll want for all similar objects, we'll want for all similar objects, we can use it to create new objects faster.
 
-//To create new objects, classes uppercase and classes need a special method called the constructor(). This method sets the property values for a new object.
+* To create new objects, classes uppercase and classes need a special method called the constructor(). This method sets the property values for a new object.
 
-//We need a way of specifying the unique values a new object will have. We do that by sending parameters to the constructor method. 
+* We need a way of specifying the unique values a new object will have. We do that by sending parameters to the constructor method. 
 
+* Before creating a new object property, we need a special keyword: "THIS". We add the this keyword to refer to the object being created. */
 
 class Book {
 	constructor(author, title) {
+		this.author = author
+		this.title = title
 	}
 }
+
+/* To create a new object property, we need to use the keyword this followed by a period and the property name. 
+
+* To finish creating the new object property we'll assign the author parameter as a value to this.author. Same for title. 
+
+* Time to use our class. We start the same way we'd create a variable but then add the "new" keyord followed by Book().
+
+* Here we'll assign new Book() to the book1 variable. */
+
+let book1 = new Book("Leo Tolstoy", "War and Peace")
+console.log(book1)
+
+let book2 = new Book("Dr. Seuss", "Oh, the Places You'll Go!")
+console.log(book2)
+
 
 
 
