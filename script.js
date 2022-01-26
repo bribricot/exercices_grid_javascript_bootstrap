@@ -1370,7 +1370,7 @@ console.log(active4)
 
 //Set the constructor() method as empty for this class. This means there's nothing in between the braces.
 
-class Animal {
+class Tiger {
 	constructor() {
 
 	}
@@ -1378,7 +1378,7 @@ class Animal {
 		console.log("Grrrroar")
 	}
 }
-let animal1 = new Animal()
+let animal1 = new Tiger()
 animal1.growl()
 
 //We don't even have to add a constructor. It's so essential that a default constructor kicks in when it's not there. In this case the animal1 instance is created with an empty constructor added behind the scenes when we run the code when we don't add it.
@@ -1416,6 +1416,51 @@ console.log(sport1)
 console.log(sport2)
 
 //* Extending classes
+
+/*
+Imagine we're making a zoo game. The animals in the zoo have a lot in commmon, but they're also different in many ways. That's where inheritance comes into play.
+
+*We can create an Animal class to bundle the main features of the animals.
+
+*Then using inheritance, we can extend it with additional functionality for the different kinds of animals
+
+*To inherit features from a class, we need to use the extends keyword in the class definition
+
+*By coding extends, we'll make the Dog class inherit from the Animal class
+*/
+class Animal {
+	constructor(name) {
+		this.name = name
+	}
+}
+//Since Dog inherits from Animal, it's a "subclass" of the Animal class. The Animal class is its superclass.
+
+class Dog extends Animal {
+}
+
+//Inheritance gives a class all the properties of the class it's extendding, or inheriting from. See it for yourself: create an object from the Ddog class and display it:
+
+let doggy = new Dog("Pug")
+console.log(doggy)
+
+//When we say class A inherited from class B, we mean class A can access all of the class B's properties and methods.
+
+class Employee {
+	constructor(company) {
+		this.company = company
+	}
+}
+
+class Dishwasher extends Employee {
+}
+let emp1 = new Dishwasher("Miele")
+console.log(emp1)
+
+
+
+
+
+
 
 
 
