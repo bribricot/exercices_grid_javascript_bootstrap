@@ -1227,7 +1227,8 @@ let book100 = {
 }
 console.log(book100)
 
-/* To make this process less error-prone and more efficient, we can use data structures called classes as templates.
+/*
+To make this process less error-prone and more efficient, we can use data structures called classes as templates.
 
 * Once we create a template with the properties we'll want for all similar objects, we'll want for all similar objects, we can use it to create new objects faster.
 
@@ -1235,7 +1236,8 @@ console.log(book100)
 
 * We need a way of specifying the unique values a new object will have. We do that by sending parameters to the constructor method. 
 
-* Before creating a new object property, we need a special keyword: "THIS". We add the this keyword to refer to the object being created. */
+* Before creating a new object property, we need a special keyword: "THIS". We add the this keyword to refer to the object being created.
+*/
 
 class Book {
 	constructor(author, title) {
@@ -1244,13 +1246,15 @@ class Book {
 	}
 }
 
-/* To create a new object property, we need to use the keyword this followed by a period and the property name. 
+/* 
+To create a new object property, we need to use the keyword this followed by a period and the property name. 
 
 * To finish creating the new object property we'll assign the author parameter as a value to this.author. Same for title. 
 
 * Time to use our class. We start the same way we'd create a variable but then add the "new" keyord followed by Book().
 
-* Here we'll assign new Book() to the book1 variable. */
+* Here we'll assign new Book() to the book1 variable. 
+*/
 
 let book1 = new Book("Leo Tolstoy", "War and Peace")
 console.log(book1)
@@ -1260,9 +1264,11 @@ console.log(book2)
 
 //*Classes with method
 
-//So far, the objects we've created from classes can't perform any actions. By adding methods to classes, we'll be able to create interactive objects using the classes as templates.
+/*
+So far, the objects we've created from classes can't perform any actions. By adding methods to classes, we'll be able to create interactive objects using the classes as templates.
 
-//Adding a method in a class is like creating a regular function, except there's no need for the function keyword. This VirtualPet class can't do much yet. Let's give it the ability to eat with a method.
+*Adding a method in a class is like creating a regular function, except there's no need for the function keyword. This VirtualPet class can't do much yet. Let's give it the ability to eat with a method. 
+*/
 
 class VirtualPet {
 	constructor(name) {
@@ -1282,11 +1288,11 @@ pet.eat("treats")
 
 /* To use the eat() method, we'll need the name of the object, a period, the name of the method, and parentheses like so : pet.eat()
 
-Parameters allow class methods to be more interactive by reacting to things we give them. Addd a parameter called food to the eat method.
+* Parameters allow class methods to be more interactive by reacting to things we give them. Addd a parameter called food to the eat method.
 
-With a confitionnal statement the objects we create will be able to react to the type of food we pass to eat() Finish adding the statement that checks if food is a particular value. 
+* With a conditionnal statement the objects we create will be able to react to the type of food we pass to eat() Finish adding the statement that checks if food is a particular value. 
 
-Each new object of the VirtualPet class we create will be able to use the eat() method. Call eat() again but this time pass it "treats"
+* Each new object of the VirtualPet class we create will be able to use the eat() method. Call eat() again but this time pass it "treats"
 */
 
 //*Creating instances* 
@@ -1311,25 +1317,6 @@ console.log(user1)
 
 //Changing an instance also doesn't affect any other instances. Set user1.isOnline to false to see how changing a property from user1 doesn't affect the properties of user2.
 
-//Because instances are independant they let us keep track of complicated data like a huge number of user on a website. We are gonna be keep track of 4 users and whether they're online.
-
-class ActiveUsers {
-	constructor(pseudo) {
-		this.pseudo = pseudo
-		this.active = true
-	}
-}
-
-let active1 = new ActiveUsers("Don")
-let active2 = new ActiveUsers("Mary")
-let active3 = new ActiveUsers("Shaun")
-let active4 = new ActiveUsers("Barry")
-
-console.log(active1)
-console.log(active2)
-console.log(active3)
-console.log(active4)
-
 //When referring to an instance of a class, we are talking about a specific object createdd from a class template.
 
 //if we changed the properties of an instance, only this instance would change. It wouldn't change anything to the class it was created from.
@@ -1345,6 +1332,92 @@ let rice = new Food("rice", 50)
 banana.calories = banana.calories / 2
 console.log(banana)
 console.log(rice)
+
+//Because instances are independant they let us keep track of complicated data like a huge number of user on a website. We are gonna be keep track of 4 users and whether they're online.
+
+//Changing a class affects all instances of that class, add a status property so that all users have a short status description form now on.
+
+class ActiveUsers {
+	constructor(pseudo) {
+		this.pseudo = pseudo
+		this.isActive = true
+		this.status = "Using this website"
+	}
+	sayHi() {
+		console.log("Hi, I'm " + this.pseudo)
+	}
+}
+
+let active1 = new ActiveUsers("Don")
+let active2 = new ActiveUsers("Mary")
+let active3 = new ActiveUsers("Shaun")
+let active4 = new ActiveUsers("Barry")
+
+active1.isActive = false
+active3.isActive = false
+
+//When changing a class, we can change both its properties and its methods. Call the newly added sayHi() method that belongs to the User class to see how all instances of User can use it.
+
+active1.sayHi()
+active2.sayHi()
+
+console.log(active1)
+console.log(active2)
+console.log(active3)
+console.log(active4)
+
+//The constructor is what creates an instance, but it doesn't always need to have properties inside of it. It works even when empty.
+
+//Set the constructor() method as empty for this class. This means there's nothing in between the braces.
+
+class Animal {
+	constructor() {
+
+	}
+	growl() {
+		console.log("Grrrroar")
+	}
+}
+let animal1 = new Animal()
+animal1.growl()
+
+//We don't even have to add a constructor. It's so essential that a default constructor kicks in when it's not there. In this case the animal1 instance is created with an empty constructor added behind the scenes when we run the code when we don't add it.
+
+/* 
+To recap : If we change the properties of a class, all instances created from that class, will have the same properties as the updated class
+
+*We can add and update methods the same way we update class properties.
+
+*Class contructor can also be empty, because it's using the default constructor
+*/
+
+class Sport {
+	constructor(name) {
+		this.name = name
+		this.scoreValue = 0
+		this.periods = 4
+		this.score = 0 //Necessary unless NaN
+	}
+	scored() {
+		this.score += this.scoreValue
+		console.log(this.score)
+	}
+}
+let sport1 = new Sport("Foot")
+let sport2 = new Sport("Soccer")
+
+sport1.scoreValue = 6
+sport2.scoreValue = 1
+
+sport1.scored()
+sport2.scored()
+
+console.log(sport1)
+console.log(sport2)
+
+//* Extending classes
+
+
 
 
 
