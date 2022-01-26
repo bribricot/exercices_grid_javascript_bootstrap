@@ -1605,7 +1605,7 @@ class ToothBrush {
 
 class ElectricBrush extends ToothBrush {
 	brush() {
-		super.brush()
+		super.brush() //The electric brush can both clean slowly and buzz.
 		console.log("Bzzz")
 	}
 }
@@ -1616,10 +1616,51 @@ let brush2 = new ToothBrush()
 brush2.brush()
 //Output: Cleaning slowly
 
+//* Coding Subclass Properties
 
+//Imagine we're expanidng the role-playing fame with a character: the warrior. Warriors wear armor and use a war cry when they attack. Since subclasses can have their own properties, we can easily add these extra features to a character.
 
+class Battle {
+	constructor(weapon) {
+		this.weapon = weapon
+		this.life = 100
+	}
+	takeDamage() {
+		this.life = this.life - 10
+	}
+	heavySword() {
+		console.log("Swings " + this.weapon)
+	}
+}
 
+class Samurai extends Battle {
+	constructor(weapon, warCry) {
+		super(weapon)
+		this.warCry = warCry
+	}
+	takeDamage() {
+		this.life = this.life - 5
+	}
+	heavySword() {
+		super.heavySword()
+		console.log(this.warCry)
+	}
+}
 
+let battle = new Battle("axe")
+battle.heavySword()
+let samurai = new Samurai("katana", "Banzaï")
+samurai.heavySword()
+
+let satoshi = new Samurai("katana", "Kashi")
+let katakura = new Samurai("spear", "monsol")
+
+satoshi.heavySword()
+katakura.heavySword()
+
+//Recap: For having an extra properties to a subclass, it's important to do it after calling the super method and his parameter between parentheses if he has one or multiple.
+
+//A superclass can't use the properties of a subclass.
 
 
 
