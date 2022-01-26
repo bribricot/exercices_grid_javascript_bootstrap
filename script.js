@@ -1456,9 +1456,81 @@ class Dishwasher extends Employee {
 let emp1 = new Dishwasher("Miele")
 console.log(emp1)
 
+/*
+If a subclass doesn't have a constructor() mehtod, the superclass's constructor becomes the default constructor.
+The name property of eastpak gets created through the Bag class's constructor. 
+Also, a subclass inherits its superclass's methods. Try calling the sell() method through the Bag instance:
+*/
 
+class Bag {
+	constructor(name) {
+		this.name = name
+	}
+	sell() {
+		console.log(this.name + " is selling at 99$")
+	}
+}
 
+class Eastpak extends Bag {
+}
 
+let eastpak = new Bag("pink eastpak")
+console.log(eastpak.name)
+eastpak.sell()
+
+//We can create as many subclasses of Vertebrates as we want. They'll all have access to the properties of the Vertebrates class. Make the Bird class inherit from the Vertebrates class and call speed() on the Bird object: 
+
+class Vertebrates {
+	constructor(name) {
+		this.name = name
+	}
+	speed() {
+		console.log(this.name + " is my speed")
+	}
+}
+
+class Bird extends Vertebrates {
+}
+
+class Mammals extends Vertebrates {
+}
+
+let hummingbird = new Bird("20 secs per meter")
+let human = new Mammals("1.4 metres per second")
+
+hummingbird.speed()
+human.speed()
+
+//Inheritance becomes useful when subclasses have additional functionnality, like their own methods. Horses can neigh, but donkey has their own way to do it: let's add a neigh() method to the Horse class and call it:
+
+class Horse {
+	constructor(name) {
+		this.name = name
+	}
+}
+
+class Donkey extends Horse {
+	neigh() {
+		console.log("Hîhan")
+	}
+}
+let donkey = new Donkey("Carot")
+console.log("My donkey " + donkey.name + " says:")
+donkey.neigh()
+
+//Inheritance works one way only. Not all instances of Horse are a kind of Donkey, so they can't access specific Horse functionnality.
+let arabian = new Horse("Appaloosas")
+
+//For exemple arabian can't use neigh(). arabian.neigh() = error
+
+/*
+To recap:
+* Subclasses can have methods on their own, not only methods that their superclass has.
+
+* Subclasses specific methods can't be accessed by other subclasses.
+*/
+
+//* Overriding methods
 
 
 
