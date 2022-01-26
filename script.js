@@ -604,7 +604,7 @@ let petName = "Garfield"
 
 //Instead of using two separate variables to describe our cat, we can group these into one variable, known as an object.
 
-let pet = {
+let animal = {
 	name: "Salto",
 	meal: "Dry fish"
 };
@@ -1257,6 +1257,41 @@ console.log(book1)
 
 let book2 = new Book("Dr. Seuss", "Oh, the Places You'll Go!")
 console.log(book2)
+
+//*Classes with method
+
+//So far, the objects we've created from classes can't perform any actions. By adding methods to classes, we'll be able to create interactive objects using the classes as templates.
+
+//Adding a method in a class is like creating a regular function, except there's no need for the function keyword. This VirtualPet class can't do much yet. Let's give it the ability to eat with a method.
+
+class VirtualPet {
+	constructor(name) {
+		this.name = name
+	}
+	eat(food) {
+		if (food === "treats") { 
+		console.log("delicious")
+	} else {
+		console.log("oh no :(")
+	}
+}
+}
+
+let pet = new VirtualPet("Camille")
+pet.eat("treats")
+
+/* To use the eat() method, we'll need the name of the object, a period, the name of the method, and parentheses like so : pet.eat()
+
+Parameters allow class methods to be more interactive by reacting to things we give them. Addd a parameter called food to the eat method.
+
+With a confitionnal statement the objects we create will be able to react to the type of food we pass to eat() Finish adding the statement that checks if food is a particular value. 
+
+Each new object of the VirtualPet class we create will be able to use the eat() method. Call eat() again but this time pass it "treats"
+*/
+
+//*Creating instances* 
+
+
 
 
 
