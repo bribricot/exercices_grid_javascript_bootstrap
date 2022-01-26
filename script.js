@@ -1291,9 +1291,60 @@ Each new object of the VirtualPet class we create will be able to use the eat() 
 
 //*Creating instances* 
 
+//Everytime we create an object from a class, we're creating what's called an instance of that class. 
 
+class Username {
+	constructor(name) {
+		this.name = name
+		this.isOnline = true
+	}
+}
+let user1 = new Username("Arya")
+let user2 = new Username("Callyope")
 
+//Each instance is independent. That means when we create a new instance, it doesn't affect any other instances.
 
+user1.isOnline = false
+console.log(user1)
+
+// False again but Callyope is true set from the User class 
+
+//Changing an instance also doesn't affect any other instances. Set user1.isOnline to false to see how changing a property from user1 doesn't affect the properties of user2.
+
+//Because instances are independant they let us keep track of complicated data like a huge number of user on a website. We are gonna be keep track of 4 users and whether they're online.
+
+class ActiveUsers {
+	constructor(pseudo) {
+		this.pseudo = pseudo
+		this.active = true
+	}
+}
+
+let active1 = new ActiveUsers("Don")
+let active2 = new ActiveUsers("Mary")
+let active3 = new ActiveUsers("Shaun")
+let active4 = new ActiveUsers("Barry")
+
+console.log(active1)
+console.log(active2)
+console.log(active3)
+console.log(active4)
+
+//When referring to an instance of a class, we are talking about a specific object createdd from a class template.
+
+//if we changed the properties of an instance, only this instance would change. It wouldn't change anything to the class it was created from.
+
+class Food {
+	constructor(name, calories) {
+		this.name = name
+		this.calories = calories
+	}
+}
+let banana = new Food("banana", 105)
+let rice = new Food("rice", 50)
+banana.calories = banana.calories / 2
+console.log(banana)
+console.log(rice)
 
 
 
