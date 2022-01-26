@@ -1662,8 +1662,63 @@ katakura.heavySword()
 
 //A superclass can't use the properties of a subclass.
 
+//**Object-oriented Programming, a style of coding used by developers to model real-life objects
 
+//*Encapsulating objects
 
+//Before anything, a simple functionnal programm, FP paradigm:
 
+function getDistance(mph, h) {
+	return mph * h
+}
+let mph = 60
+let h = 2
+let distance = getDistance(mph, h)
+console.log(distance)
 
+//Then, object oriented programming, OOP paradigm. In this style, we group data and functionality as properties and methods inside objects. Add a property called hungry and a method called eat to our virtual cat object:
 
+let miaou = {
+	hungry: true,
+	eat: function() {
+		miaou.hungry = false
+	}
+}
+miaou.eat()
+console.log(miaou.hungry)
+
+//OOP is useful for modeling real-life objects, which have properties and functions that we treat as one package, like a car for example. Let's model an automobile by creating an object with a mileage property and a drive() method. One style is not a replacement for the other, and we often need to use both FP & OOP when programming, depending on what we need to do.
+
+let automobile = {
+	mileage: 4000,
+	drive: function(miles) {
+		automobile.mileage += miles
+	}
+}
+automobile.drive(300)
+console.log(automobile.mileage)
+//Output: 4300
+
+function addMoney(value, amount) { 
+	return value + amount
+}
+
+let value = 0
+value = addMoney(value, 100)
+value = addMoney(value, 50)
+value = addMoney(value, 22)
+
+console.log(value)
+//Output 172
+
+//Let's start by creating a value property that can be easily updated and setting it to 0
+
+let myPiggy = {
+	value: 0,
+	addMoney: function(amount) {
+		myPiggy.value = myPiggy.value + amount
+	}
+}
+myPiggy.addMoney(100)
+console.log(myPiggy.value)
+//Output: 100
