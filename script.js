@@ -1496,10 +1496,10 @@ class Mammals extends Vertebrates {
 }
 
 let hummingbird = new Bird("20 secs per meter")
-let human = new Mammals("1.4 metres per second")
+let humanoid = new Mammals("1.4 metres per second")
 
 hummingbird.speed()
-human.speed()
+humanoid.speed()
 
 //Inheritance becomes useful when subclasses have additional functionnality, like their own methods. Horses can neigh, but donkey has their own way to do it: let's add a neigh() method to the Horse class and call it:
 
@@ -1531,6 +1531,91 @@ To recap:
 */
 
 //* Overriding methods
+
+/*
+Say we're developing a role-playing game with humas and wizards. Wizards are special humans who can attack with magic spells. That's where method overriding comes in handy.
+
+*We can create a Human class and have Wizard class extend it.
+
+*Then using method overridding, we can change the Wizard class's attacking behavior
+
+*Overriding a method replaces the code of the methodd in the superclass with that of the subclass.
+
+*Call receiveDamage() method from the Wizard class to see what happends to the health property.
+
+*If we need the behavior from the superclass's method, we can call it with the "SUPER" keyword. Type in the correct keyword to call the attack() method from the Human class.
+*/
+
+class Human {
+	constructor(weapon) {
+		this.weapon = weapon
+		this.health = 100
+
+	}
+	receiveDamage() {
+		this.health = this.health - 10
+	}
+	attack() {
+		console.log("Swing " + this.weapon)
+	}
+}
+
+class Wizard extends Human {
+	receiveDamage() {
+		this.health = this.health - 5
+	}
+	attack() {
+		super.attack()
+		console.log("Zimzalabim!")
+	}
+}
+
+let human = new Human("ax")
+human.receiveDamage()
+human.attack()
+console.log(human.health)
+//Output: 90
+
+let wizard = new Wizard("staff")
+wizard.receiveDamage()
+wizard.attack()
+console.log(wizard.health)
+//Output: 95
+
+/*
+To ovveride a method, we give it the same name andd parameters as the method in the superclass. We can override receiveDamage() from the superclass by coding the same method in the subclass.
+
+*Overriding means that we can have the same method in the subclass but customize its behavior for what's needed in the subclass.
+
+*When we call receiveDamage() method on human and wizard we'll see their simular behavior but different result (90, 95)
+
+*To customize the method in the subclass, we want a method that ovveride a method from a superclass. 
+
+*The subclass method needs to have the name and parameters in common with the superclass method when overriding it.
+
+*A subclass can't still use the original superclass'method once it overrides it. When calling that method by its name without super, the sunbclass will use the overriding method.
+
+*/
+
+class ToothBrush {
+	brush() {
+		console.log("Cleaning slowly")
+	}
+}
+
+class ElectricBrush extends ToothBrush {
+	brush() {
+		super.brush()
+		console.log("Bzzz")
+	}
+}
+let brush1 = new ElectricBrush() 
+brush1.brush()
+//output: Bzzzz
+let brush2 = new ToothBrush()
+brush2.brush()
+//Output: Cleaning slowly
+
 
 
 
