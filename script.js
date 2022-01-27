@@ -1722,3 +1722,49 @@ let myPiggy = {
 myPiggy.addMoney(100)
 console.log(myPiggy.value)
 //Output: 100
+
+/*
+In OOP, we group together related data and functions in the same object. We call this encapsulation, and it's a key principle of OOP.
+
+*For having a code encapsulated, we need to have variables andd functions grouped together in one object. 
+
+*We have to identify which methods and properties belong together and which should be addedd to other objects in our code.
+
+*Though encapsulation methods can access properties that belong to the same object. HEre the drive method has to access to the mileage property.
+
+*To recap: Encapsulation is grouping related data and functions in the same object.
+-
+*/
+let voiture = {
+	mileage: 10332,
+	drive: function(miles) {
+		car.mileage += miles
+	}
+}
+console.log()
+
+//To encapsulate the code, we'll turn the variables into properties and the function into a method.
+// FP : 
+//function getArea(b, h) {
+// 	return b * h
+// }
+// let base = 3
+// let height = 4
+
+let rectangle = {
+	base: 3,
+	height: 4,
+	getArea: function() {
+		return rectangle.base * rectangle.height
+	}
+}
+//Now that rectangle is an object, we can keep track of its properties and update them whenever we want and update the base property for example: 
+
+rectangle.base = 10
+let area = rectangle.getArea()
+console.log(area)
+
+// *Applying inheritance in OOP
+
+
+
