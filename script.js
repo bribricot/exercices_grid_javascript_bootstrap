@@ -1726,15 +1726,15 @@ console.log(myPiggy.value)
 /*
 In OOP, we group together related data and functions in the same object. We call this encapsulation, and it's a key principle of OOP.
 
-*For having a code encapsulated, we need to have variables andd functions grouped together in one object. 
+*For having a code encapsulated, we need to have variables and functions grouped together in one object. 
 
 *We have to identify which methods and properties belong together and which should be addedd to other objects in our code.
 
-*Though encapsulation methods can access properties that belong to the same object. HEre the drive method has to access to the mileage property.
+*Though encapsulation methods can access properties that belong to the same object. Here the drive(miles) method has to access to the mileage property.
 
 *To recap: Encapsulation is grouping related data and functions in the same object.
--
 */
+
 let voiture = {
 	mileage: 10332,
 	drive: function(miles) {
@@ -1743,13 +1743,15 @@ let voiture = {
 }
 console.log()
 
-//To encapsulate the code, we'll turn the variables into properties and the function into a method.
-// FP : 
-//function getArea(b, h) {
-// 	return b * h
-// }
-// let base = 3
-// let height = 4
+/*To encapsulate the code, we'll turn the variables into properties and the function into a method.
+
+FP : 
+function getArea(b, h) {
+	return b * h
+}
+let base = 3
+let height = 4
+*/
 
 let rectangle = {
 	base: 3,
@@ -1758,6 +1760,7 @@ let rectangle = {
 		return rectangle.base * rectangle.height
 	}
 }
+
 //Now that rectangle is an object, we can keep track of its properties and update them whenever we want and update the base property for example: 
 
 rectangle.base = 10
@@ -1765,6 +1768,152 @@ let area = rectangle.getArea()
 console.log(area)
 
 // *Applying inheritance in OOP
+/*
+Let's take a look at another key concept: inheritance, previously covered when learning about JavaScript classes.
+
+*When we create objects one by one we run into the problem of having duplicate code. We use inheritance to make our code efficient. 
+
+*Through inheritance, objects receive methods from other objects and classes. Inheritance lets us create oobjects that have different properties and behaviors without coding each one from scratch.
+
+*One way to apply inheritance is by creating objects from other objects. Code Object.create() for addding a template object in parentheses.
+*/
+
+let person1 = {
+	greet: function() {
+		console.log("Hi")
+	}
+}
+
+let person2 = {
+	greet: function() {
+		console.log("Hi")
+	}
+}
+//Here, they are 2 methods. 
+
+//One way to apply inheritance is by creating objects from other objects. Code "Object.create()" and add the template object in parentheses.
+
+let template1 = {
+	greet: function() {
+		console.log("Hi!")
+	}
+}
+let person3 = Object.create(template1)
+
+//The person object has now inherited the template object's methods and can use them as its own. Try calling greet() as a methodd of person 
+
+person3.greet()
+//Output: Hi!
+
+//Objects don't actually own inherited methods but borrow them. To prove this, display the new "person" object to see it's empty.
+console.log(person3)
+//Output: <prototype>: Object { greet: greet() }
+
+//If we need more methods for an object, we can set them directly.
+
+let car = {
+	startEngine: function() {
+		console.log("Starting engine")
+	}
+}
+
+let hybrid = Object.create(car)
+
+hybrid.charge = function() {
+	console.log("Using fuel to charge battery")
+}
+
+hybrid.startEngine()
+hybrid.charge()
+
+//When using Object.create() property values aren't inherited either. Display the player1 object to see it doesn't have a name value set.
+
+let player = {
+	name: "Player",
+	greet: function() {
+		console.log("Ready to play")
+	}
+}
+
+let player1 = Object.create(player)
+player1.name = "Jill" //Just like with methods, we can set properties directly. Set the name to Jill for the player2 object, "Player" is first here. 
+
+console.log(player1)
+//Output: <prototype>: Object { name: "Player", greet: greet() }
+
+
+
+//** 
+//We took a look at an interesting way of applying inheritance in JavaScript with Object.create(). Although useful, this is not the most common approach. We'll take a look at how inheritance works with classes.
+
+let car1 = {
+	displayMiles: function() {
+		console.log("0 miles driven")
+	}
+}
+
+let porshe = Object.create(car1)
+let bmw = Object.create(car1)
+let jaguar = Object.create(car1)
+
+porshe.displayMiles()
+bmw.displayMiles()
+jaguar.displayMiles()
+
+/*
+To recap:
+
+*Object to object inheritance can be described as objects that can use methods stored in a template object. 
+
+*Objects don't own their inherited methods.
+
+*Inheritance make our OOP code more efficient because it lets us write a method once and use it with many objects.
+*/
+
+let speaker = {
+	play: function() {
+		console.log("Playing audio")
+	}
+}
+
+let alexa = Object.create(speaker)
+
+alexa.listen = function() {
+	console.log("Listening")
+}
+//The new object alexa inherit only the play() method. 
+
+let car3 = {
+	drive: function() {
+		console.log("Vroom")
+	}
+}
+
+let myCar = Object.create(car3)
+console.log(myCar)
+
+let player3 = {
+	fight: function() {
+		console.log("Take that")
+	}
+}
+
+let wizard1 = Object.create(player3)
+wizard1.castSpell = function() { //add a new method to the new wizard object.
+	console.log("Alohomora!")
+}
+wizard1.fight()
+wizard1.castSpell()
+
+
+
+
+
+
+
+
+
+
 
 
 
