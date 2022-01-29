@@ -2284,6 +2284,9 @@ premium.playVideo()
 
 //Both instances and subclasses can overridde their inherited methods.
 
+//**Dynamic Webpages**
+
+//*Interacting with Webpages
 
 
 
