@@ -2014,5 +2014,155 @@ class Writer extends Reviewer {
 let control1 = new Writer() //He can both read and edit.
 let control2 = new Reviewer() // He's reading only.
 
-console.log(control1)
-console.log(control2)
+console.log(control1.edit, control1.read)
+console.log(control2.read, control2.edit) //edit is undefined here!
+
+//*Abstracting Objects
+
+//Model a complicated object, like a car in JavaScript: when we're driving, we don't have to interact with the mechanics of the car at every level. The same goes for code. We don't interact with every method or property. We want to interact with a few cire parts that control the rest. A car does a lot of things as the same time. For example, a car injects and ignites fuel thousands of times a minute just to stay running.
+
+class Car {
+	injectFuel() {
+		console.log("Spraying fuel")
+	}
+	igniteFuel() {
+		console.log("Boom")
+	}
+}
+
+let acar = new Car()
+acar.injectFuel()
+acar.igniteFuel()
+acar.injectFuel()
+acar.igniteFuel()
+
+//If we had to always make low-level method calls to control an object, our code would be very hardd to read and use. Besides that, managing each-low level method call by oourselves increases the chance we'll make a mistake and cause unwanted effects.
+
+acar.injectFuel()
+acar.injectFuel()
+acar.igniteFuel()
+
+//Cars do all of this low-level fuctionality for us, and we only have to start them up. Hidding these details is called abstraction. We'll implement abstraction in OOP by writing a few core functions that handle all of the low-level work.
+
+class Car1 {
+	constructor(start) {
+		this.on = true
+	}
+	stepOneFuel() {
+		console.log("Injecting fuel")
+	}
+	stepTwoFuel() {
+		console.log("Fuel consummed")
+	} 
+
+	startUp() {
+		this.on = false //If on, infinite loop
+		while (this.on) {
+			this.stepOneFuel()
+			this.stepTwoFuel()
+		}
+	}
+}
+
+class Mitsubishi extends Car1 {
+	constructor(start) {
+		super(start)
+	}
+}
+
+let  eclipseCross = new Mitsubishi()
+
+eclipseCross.startUp()
+//Output: Injecting fuel, Fuel consummed....infinite....
+
+//Abstraction allows other developers to use our class without having to know what low-level methods it has or how they even work. Other developpers can create a new object from our "Car1" class and use it by just calling a few core methods.
+
+//To recap: Abstraction is simplifying how we interact with objects down to a few methods. We implement it by writing a few core methods that handle low-level functions.
+
+//A core method is like takePhoto() not closeShutter() for example
+
+//Abstract this class by creating a makeCoffee() method that heats water, adds it to coffee grouds and filters off the coffee:
+class Coffeemaker {
+	heatWater() {
+		console.log("Heating water")
+	}
+	brew() {
+		console.log("Adding water to grounds")
+	}
+	filter() {
+		console.log("Filtering coffee")
+	}
+	makeCoffee() {
+		this.heatWater()
+		this.brew()
+		this.filter()
+	}
+}
+
+let coffeeMaker = new Coffeemaker() 
+coffeeMaker.makeCoffee()
+//Output: Heating water Adding water to grounds Filtering coffee
+
+//To make ice cream, we must both churn and freeze cream. Call the method of iceCreamMaker that doeas both for us:
+
+class IceCreamMaker {
+	churn() {
+		console.log("Churning cream")
+	}
+	freeze() {
+		console.log("Freezing cream")
+	}
+	makeIceCream() {
+		this.churn()
+		this.freeze()
+	}
+}
+
+let iceCreamMaker = new IceCreamMaker()
+iceCreamMaker.makeIceCream()
+//Output: Churning cream Freezing cream
+
+//Code the translateLive() method so that travelers using your app can instantly translate their audio into another language.
+
+class Translator {
+	record() {
+		console.log("Recording audio")
+	}
+	transcribeRecording() {
+		console.log("Converting audio to text")
+	}
+	translateText() {
+		console.log("Translating text")
+	}
+	translateLive() {
+		this.record()
+		this.transcribeRecording()
+		this.translateText()
+	}
+}
+let translateme = new Translator()
+translateme.translateLive()
+//Output: Recording audio Converting audio to text Translating text
+
+//Call the correct core method that handles the low-level functionality of changing slides after displaying each one:
+
+class Slideshow {
+	constructor(slides) {
+		this.slides = slides
+		this.current = 1
+	}
+	viewNextSlide() {
+		this.current++
+	}
+	play() {
+		while (this.current <= this.slides) {
+			console.log('Slide ' + this.current)
+			this.viewNextSlide()
+		}
+	}
+}
+
+let slideShow = new Slideshow(5)
+slideShow.play()
+
+//Output: Slide 1 Slide 2 Slide 3 Slide 4 Slide 5
