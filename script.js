@@ -2286,7 +2286,17 @@ premium.playVideo()
 
 //**Dynamic Webpages**
 
-//*Interacting with Webpages
+//*Interacting with Webpages with html5
+
+//Behind every dynamic and responsive website there's some JavaScript code. On this webpage, JavaScript changes the text when you click the reverse button and reverse the order of the letters.
+
+//To add JavaScript code to a webpage, we start with the script tags. It's the LAST ELEMENT BEFORE CLOSING THE BODY TAG in the HTML structure.
+
+//To tell the elements how to respond to, say, the click of a button, we need a way of interacting with them : the first step in doing that is giving each element an ID ! All IDD values are unique ! They identify HTML elements and help us to interact with them using JavaScript
+
+
+
+
 
 
 
