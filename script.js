@@ -1905,15 +1905,114 @@ wizard1.castSpell = function() { //add a new method to the new wizard object.
 wizard1.fight()
 wizard1.castSpell()
 
+/* Applying inheritance in OOP pt2
 
+*We're previously learned how to use classes to make our code more efficient. Every class contains a method called a constructor that sets the properties of new objects, known as instances.
 
+*Creating objects out of classes is a great example of using inheritance to write short efficient code
 
+*Writing OOP code with classes requires planning. Let's take a look at how a developer would plan their code in the following situation. Suppose we wanted to model students in the following code:
+*/
 
+//We've decided "Student" objects should work exactly like "User", but also have a property called "major". If we create a new "Student" class, we end up repeating a lot of code from "User". Which parts are repeated ? : The assignment of the name and age properties and the greet() method. 
 
+class Users {
+	constructor(name, age) {
+		this.name = name
+		this.age = age
+	}
+	greet() {
+		console.log("Hi, I study " + this.major)
+	}
+}
+/*
+class Student {
+	constructor(name, age, major) {
+		this.name = name,
+		this.age = age,
+		this.major = major
+	}
+	greet() {
+		console.log("Hii")
+	}
+}
 
+*Instead, it makes more sense to create a subclass that inherits User's greet() method. To do that, code extends Users. Once we've created a subclass, we make sure the Student class also has the properties of Users by coding the super keyword with the classes they want to share.
 
+*After we've created a subclass that has all the properties of the superclass, we can add the additional properties we need like major.
+*/
 
+//We can now create objects that own properties and inherit methods form both Student and Users. A key part of writing OOP code is figuring out effective ways of applying inheritance. 
 
+class Student extends Users {
+	constructor(name, age, major) {
+		super(name, age)
+		this.major = major
+	}
+}
 
+let student1 = new Student("Sam", 25, "chemistery")
+let student2 = new Student("Ann", 25, "architecture")
+let student3 = new Student("Zoé", 25, "maths")
 
+console.log(student1)
+student1.greet()
+student2.greet()
 
+class Phone {
+	constructor(provider) {
+		this.provider = provider
+	}
+	call(contact) {
+		console.log("Calling " + contact)
+	}
+}
+
+let phone1 = new Phone ("AT&T")
+// The property AT&T is only displayed because call() is inherited, for having the method you should call it.
+console.log(phone1) 
+//Output: Object { provider: "AT&T" }
+
+phone1.call("Mia")
+//Output: Calling Mia
+
+class Employees {
+	constructor(compagny) {
+		this.compagny = compagny
+	}
+	mission() {
+		console.log("Hi, I'm capable of " + this.language)
+	}
+}
+
+class Developper extends Employees {
+	constructor(compagny, language) {
+		super(compagny)
+		this.language = language
+	}
+}
+let employee1 = new Developper("Google", "python")
+let employee2 = new Developper("Amazon", "sql")
+
+console.log(employee1)
+console.log(employee2)
+
+employee1.mission()
+employee2.mission()
+
+class Reviewer {
+	read() {
+		console.log("Lecture")
+	}
+}
+class Writer extends Reviewer {
+	edit() {
+		console.log("Edition")
+	}
+}
+
+let control1 = new Writer() //He can both read and edit.
+let control2 = new Reviewer() // He's reading only.
+
+console.log(control1)
+console.log(control2)
