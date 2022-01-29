@@ -2053,7 +2053,10 @@ class Car1 {
 	}
 	stepTwoFuel() {
 		console.log("Fuel consummed")
-	} 
+	}
+	honk() {
+		console.log("Honk")
+	}
 
 	startUp() {
 		this.on = false //If on, infinite loop
@@ -2166,3 +2169,128 @@ let slideShow = new Slideshow(5)
 slideShow.play()
 
 //Output: Slide 1 Slide 2 Slide 3 Slide 4 Slide 5
+
+//*Polymorphic Objects
+
+/* To make our code easier to use, we want to keep the same method calls for different objects, even if they have slighly different behaviors:
+
+car.displayAlert() // Output: Warning: Fuel low
+elecrtricCar.displayAlert() //Output: Warning: Battery low
+
+*Sometimes inherited methods won't make sense without adapting them, like displaying a fuel warning for an electricCar object.
+
+
+class GasCar {
+	displayAlert() {
+		console.log("Fuel low")
+	}
+	startNavigation() {
+		console.log("Select destination")
+	}
+}
+
+let electricalCar = new GasCar()
+electricalCar.diplayAlert()
+//Output: Fuel low
+
+*In OOP, objects can have the same method calls but different behaviors. We call that polymorphism.
+
+*As a example, all three instances below inherit the honk() method but produce different sounds.
+*/
+
+let prius = new Car1()
+let kia = new Car1()
+let tesla = new Car1()
+
+prius.honk()
+kia.honk()
+tesla.honk()
+//Output: Honk, Honk, Honk
+
+//With a simple method inherited, they'll honk the same sound three times.
+
+//To apply polymorphism and change how objects behave, we override object methods with the right behavior.
+
+class ClassicCar {
+	alertOpenDoor() {
+		console.log("Open 4 doors")
+	}
+	lockDoors() {
+		console.log("Locking 4 doors")
+	}
+}
+
+class Coupe extends ClassicCar {
+	lockDoors() {
+		console.log("Locking 2 doors")
+	} 
+}
+
+let myNewCar = new ClassicCar()
+let myNewCoupe = new Coupe()
+
+myNewCoupe.alertOpenDoor()
+//Output: Open 4 doors !
+
+//Similarly, we override subclass methods when needed. Code lockDoors() to override the method:
+
+myNewCoupe.lockDoors()
+//Output: Locking 2 doors
+
+//Through polymorphism, we can call on object methods knowing that they have the correct behavior set. Not having to remember different method names for each unique behavior makes our code easy to use and maintain.
+
+myNewCar.lockDoors()
+//Output: Locking 4 doors
+myNewCoupe.lockDoors()
+//Output: Locking 2 doors
+
+class Personnality {
+	greet() {
+		console.log("Hello")
+	}
+}
+
+class Professor extends Personnality {
+	greet() {
+		console.log("Salutations")
+	}
+}
+
+let professor = new Professor()
+
+professor.greet = function() {
+	console.log("Good news, everyone !")
+}
+professor.greet()
+
+//First, it was Hello, then Professor erase it with Salutations, and then we attributed Good news... to the same greet function and actualized it.
+
+//Override the inherited method so that premium.playVideo() doesn't show any ads:
+
+class MyUser {
+	playVideo() {
+		console.log("Ad #1: Shaving cream 9,99$")
+	} 
+}
+
+let premium = new MyUser()
+premium.playVideo = function () {
+	console.log("You've successfuly connected: Buffering HD Video")
+}
+
+premium.playVideo()
+
+//To recap: Polymorphism is when objects have the same method call but different behaviors.
+
+//Both instances and subclasses can overridde their inherited methods.
+
+
+
+
+
+
+//Output: 
+//Output: 
+//Output: 
+//Output: 
+//Output: 
