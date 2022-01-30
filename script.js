@@ -2294,6 +2294,23 @@ premium.playVideo()
 
 //To tell the elements how to respond to, say, the click of a button, we need a way of interacting with them : the first step in doing that is giving each element an ID ! All IDD values are unique ! They identify HTML elements and help us to interact with them using JavaScript
 
+//First instruction, id #index inside parentheses
+document.getElementById("index")
+
+//To make changes to the text between the tags we need to retrieve it with .innerHTML. It gives us the text.
+console.log(document.getElementById("index").innerHTML)
+//Output: First instruction
+
+//After we retrieve it, we can update it by using the equal sign followed by a value that we picked.
+document.getElementById("index").innerHTML = "Second instruction"
+
+//innerHTML is for accessing the text of an element.
+//document.getElementById retrieves the tags and the text of an HTML element
+
+
+
+
+
 
 
 
