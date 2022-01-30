@@ -2288,24 +2288,54 @@ premium.playVideo()
 
 //*Interacting with Webpages with html5
 
-//Behind every dynamic and responsive website there's some JavaScript code. On this webpage, JavaScript changes the text when you click the reverse button and reverse the order of the letters.
+/*
 
-//To add JavaScript code to a webpage, we start with the script tags. It's the LAST ELEMENT BEFORE CLOSING THE BODY TAG in the HTML structure.
+*Behind every dynamic and responsive website there's some JavaScript code. On this webpage, JavaScript changes the text when you click the reverse button and reverse the order of the letters.
 
-//To tell the elements how to respond to, say, the click of a button, we need a way of interacting with them : the first step in doing that is giving each element an ID ! All IDD values are unique ! They identify HTML elements and help us to interact with them using JavaScript
+*To add JavaScript code to a webpage, we start with the script tags. It's the LAST ELEMENT BEFORE CLOSING THE BODY TAG in the HTML structure.
 
-//First instruction, id #index inside parentheses
+*To tell the elements how to respond to, say, the click of a button, we need a way of interacting with them : the first step in doing that is giving each element an ID ! All IDD values are unique ! They identify HTML elements and help us to interact with them using JavaScript
+
+*First instruction, id #index inside parentheses
 document.getElementById("index")
 
-//To make changes to the text between the tags we need to retrieve it with .innerHTML. It gives us the text.
+*To make changes to the text between the tags we need to retrieve it with .innerHTML. It gives us the text.
+*/
+
 console.log(document.getElementById("index").innerHTML)
 //Output: First instruction
 
 //After we retrieve it, we can update it by using the equal sign followed by a value that we picked.
-document.getElementById("index").innerHTML = "Second instruction"
 
-//innerHTML is for accessing the text of an element.
-//document.getElementById retrieves the tags and the text of an HTML element
+document.getElementById("index").innerHTML = "Second instruction"
+//Output: direct change in HTML : Second instruction override First instruction
+
+/*
+To recap:
+
+*innerHTML is for accessing the text of an element.
+
+*document.getElementById retrieves the tags and the text of an HTML element
+*/
+
+//*Using variables in Webpages
+
+//We can create variables like let element and use them to store the HTML element we access. We store the element we're accessing through document.getElementById() using a variable.
+
+let element = document.getElementById("index")
+
+//Now the element variable stands for what's in the document.getElementById("index"). We can access the text of the paragraph through the variable element by using .innerHTML
+
+console.log(element.innerHTML)
+
+//We can also use the variable to update the paragraph's content, by adding equal sign and the new value "Third instruction". 
+
+//let element = document.getElementById("index")
+element.innerHTML = "Third instruction" 
+//It will override First instruction, then skip Second Instruction for Third Instruction.
+
+console.log(element.innerHTML)
+
 
 
 
