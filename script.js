@@ -2382,10 +2382,21 @@ To recap:
 *It's a good idea to store the parent element in a variable when accessing it to avoid rewriting the instruction when we need the parent.
 */
 
+//*Removing Elements
 
+//We need a new function to remove elements when users click the button for example.
 
+//To remove the p element fromt the body, bodyElement.removeChild is the correct instruction.
 
+//bodyElement.removeChild(paragraph)
 
+//Remember we don't create variables for the element we want to remove, create or the parent for access these elements, it's only for make the code more readable.
+
+let list1 = document.getElementById("list")
+let ingredient1 = document.getElementById("flour")
+let ingredient2 = document.getElementById("sugar")
+
+list1.removeChild(ingredient2)
 
 
 
