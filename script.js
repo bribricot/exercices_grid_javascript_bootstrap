@@ -2339,20 +2339,48 @@ console.log(element.innerHTML)
 
 //*Creating Elements
 
+let bodyElement = document.getElementById("parent") 
+//First instruction, therefore the DOM can't access property "appendChild" and bodyElement is null...
+
 //Creating new elements with JS, like when users click the Show Message button, makes for flexible and user-friendly webpage.  Start with a variable named paragraph to store the element we want to create. Create a specific element by coding its name surrounded by quotes. p for create a paragraph
 
 let paragraph = document.createElement("p")
 
 //The element stored in paragraph has no text so we need paragraph.innerHTML to change that. To set the text of the new paragraph, code an equal sign followed by a string value:
 
-paragraph.innerHTML = "I'm a paragraph"
+paragraph.innerHTML = "I'm a paragraph injected"
 
 //We use a variable to store an element we create for make our code more readable.
 
 //Created elements don't automatically display. We'll learn later how to make them show up.
 console.log(paragraph)
 
+//*Nesting Elements
 
+/*
+Now that we know how to create elements using JS, we can learn how to nest andd display them.
+
+*When nesting an element like the "p" element inside the "body element", "body" becomes the PARENT of "p", so "p" is the CHILD of "body"
+
+*First, in the HTML code, set an id to the body so we can nest a new element inside of it.
+
+*Inside the script, create a variable to store body element using let bodyElement.
+
+*Then access the body element using document.getElementById("parent")
+
+*To nest an element inside the bodyElement, we use bodyElement.append(paragraph)
+*/
+
+//let bodyElement = document.getElementById("parent")
+bodyElement.append(paragraph)
+
+/*
+To recap: 
+
+*Be careful: we need to set before we can create an element, the ID of the created element's parent ! 
+
+*It's a good idea to store the parent element in a variable when accessing it to avoid rewriting the instruction when we need the parent.
+*/
 
 
 
