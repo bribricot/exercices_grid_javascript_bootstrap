@@ -2327,7 +2327,7 @@ let element = document.getElementById("index")
 //Now the element variable stands for what's in the document.getElementById("index"). We can access the text of the paragraph through the variable element by using .innerHTML
 
 console.log(element.innerHTML)
-
+//Output: Second Instruction
 //We can also use the variable to update the paragraph's content, by adding equal sign and the new value "Third instruction". 
 
 //let element = document.getElementById("index")
@@ -2335,6 +2335,25 @@ element.innerHTML = "Third instruction"
 //It will override First instruction, then skip Second Instruction for Third Instruction.
 
 console.log(element.innerHTML)
+//Output: Third Instruction
+
+//*Creating Elements
+
+//Creating new elements with JS, like when users click the Show Message button, makes for flexible and user-friendly webpage.  Start with a variable named paragraph to store the element we want to create. Create a specific element by coding its name surrounded by quotes. p for create a paragraph
+
+let paragraph = document.createElement("p")
+
+//The element stored in paragraph has no text so we need paragraph.innerHTML to change that. To set the text of the new paragraph, code an equal sign followed by a string value:
+
+paragraph.innerHTML = "I'm a paragraph"
+
+//We use a variable to store an element we create for make our code more readable.
+
+//Created elements don't automatically display. We'll learn later how to make them show up.
+console.log(paragraph)
+
+
+
 
 
 
