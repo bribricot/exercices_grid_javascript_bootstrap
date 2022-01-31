@@ -2598,6 +2598,19 @@ html
 document.body.firstElementChild.nextElementSibling.innerHTML = "I'm changing the p"
 */
 
+//**Querying Webpages
+
+//*Querying Specific Selectors*
+
+//If we want to retrieve individual HTML elements, we use the querySelector() method.
+
+function publish() {
+	let element1 = document.querySelector("#p")
+	element1.innerHTML = "Website published"
+
+}
+
+//To select a specific element, we add a selector inside parentheses, like coding "p" if we want to get the paragraph below the button. 
 
 
 
