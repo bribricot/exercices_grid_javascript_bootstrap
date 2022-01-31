@@ -2398,6 +2398,27 @@ let ingredient2 = document.getElementById("sugar")
 
 list1.removeChild(ingredient2)
 
+//*Including a script
+
+/*
+*To make creating interactive webpages even easier we can use seperate files to add JavaScript and HTML
+
+*<script src="script.js"></script> in the HTML
+
+*Without addditional information, a button tag is useless. To react to clicks from visitors, a button tag needs the onclick attribute.
+
+*<button onclick>Publish webstie</button>
+
+*The onclick attribute can call functions from an included script when a visitor clicks on : onclick="sayHello()"
+
+*Using .innerHTML, we can make the sayHello() function change the content of the paragraph a visitor clicks on the button. 
+*/
+
+function sayHello() {
+	document.getElementById("info").innerHTML = "Website published!"
+}
+
+
 
 
 
