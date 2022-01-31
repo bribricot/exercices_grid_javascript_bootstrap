@@ -2502,8 +2502,102 @@ console.log(document.body.firstElementChild.innerHTML)
 We consider the text inside text nodeds even though it doesn't have th "<" and ">"
 */
 
+//*HTML Tree Node Relations, how nodes relate to each other.
 
-//Output: 
-//Output: 
-//Output: 
-//Output: 
+/*
+We refer to nodes as being in a parent-child relationship if they are connected and there are no other nodes between them.
+
+*We create a child node by nesting an element inside another. The "p" element is inside the body element so it's a child of "body":
+
+<body>
+	<h1>Puzzles</h1>
+	<p>Landscape</p>
+</body>
+
+*If a "li" is nested inside a "ul", li is not directy inside body, so its node PARENT is "li" instead of "body"
+
+*A node is descendant of another node, if there is a connection between them, even if there are other nodes in between. Here, all nodes are dedscendants of the html node:
+html > body > p > text
+
+*We create descendant nodes by nesting elements inside each other. The "li" inside the "ul" which is inside "body". "li" is a DESCENDANT of "body"
+
+*Two nodes are siblings if they share the same parent like "h1" and "p"
+
+*Here, "h1" and "p" are sibling nodes because they appear nested inside the same parent "body".
+
+*So the ul element is a child of the body. "body" is a descendant of "body" because all children are descendants
+
+*Nodes are siblings when they descendant of the same node
+
+*PARENT/SIBLINGS/DESCENDANT
+
+//*The Document Object Model
+
+/*
+The principle is to have easy access to HTML elements based on their position in the HTML document's tree representation
+
+*The DOM is a javasript INTERFACE that allows us to access HTML elements based on their position in the HTML document's tree
+
+*Before we start accessing elements with JavaScript we need to add a script element. The first thing the DOM allows us to do is access the root HTML node with javascript keyword "document"
+*/
+
+let htmlRoot = document
+
+//Just like we access object properties, we can access the child nodes of the html nodde with .head and .body
+
+let theHead = document.head
+let theBody = document.body
+
+console.log(theHead)
+console.log(theBody)
+
+/*
+We can then update the nodes with .innerHTML
+
+theBody.innerHTML = "Where did the page go"
+
+*To get all the children nodes of a node, we use the .children property. This gives us an array of the child nodes in order of appearance. 
+
+let bodyChildren = document.body.children
+bodyChildren[0].innerHTML = "Who changed my heading?"
+
+*We can access the first child node of a parent with .firstElementChild 
+
+let heading = document.body.firstElementChild
+heading.innerHTML = "Changing heading"
+
+*We can access the nearest sibling of an element node with .nextElementSibling
+
+let theBody1 = document.head.nextElementSibling
+theBody1.innerHTML = "Page deleted"
+
+*For example, accessing the "p" when there a two children in the body element would be : document.body.children[1]
+
+*Here document.head.nextElementSibling is body:
+html
+head
+title
+body
+h1
+ol
+li
+ol
+body
+html
+
+*Here, assign p:
+html
+head
+title
+body
+h1
+p
+body
+html
+
+document.body.firstElementChild.nextElementSibling.innerHTML = "I'm changing the p"
+*/
+
+
+
+
