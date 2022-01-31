@@ -967,17 +967,17 @@ displayCountdown(6)
 //How to use functions to go over arrays and manipulate their values whenever we want, like when we click a button.
 
 let grades = [91, 66, 77, 84, 66]
-let search = 66
+let searchnumber = 66
 
 function searchGrade(gradeds, search) {
 	for (let i = 0; i < grades.length; i++) {
-		if (grades[i] === search) {
+		if (grades[i] === searchnumber) {
 			console.log("This is the correct grade")
 			break
 		}
 	}
 }
-searchGrade(grades, search)
+searchGrade(grades, searchnumber)
 //Output: This is the correct grade.
 
 //Functions are useful when we want to execute reusable code. To access array elements using the searchGrade function, let's pass the grades array when calling the function.
@@ -2418,17 +2418,64 @@ function sayHello() {
 	document.getElementById("info").innerHTML = "Website published!"
 }
 
+//Getting User Input
+
+/*
+Websites come to life with user input: when visitors add comments, send messages, or share posts with their friends :
+
+*We've learned before that we get user input with the input element: single tag like this: <input>
+
+*input elements can only be text fields with a sigle line. To create a multiple-line text area use <textarea></textarea>
+
+*To control the size, rows attribute rows="6", cols attribute cols="15"
+
+*For the placeholder same: placeholder="My Placeholder"
+
+*To access user input from an included script, we need to add .value at the end of document.getElementById()
+
+let mimo = document.getElementById("mimoInput").value
+console.log(mimo)
+Output: Miaou : If I type Miaou in the input!
+
+*After accessing user input, we can use it like any other value.
+
+*Knowing how to get user input, we can use it to update a webpage. Assemble the code so that the value of mimo appears on the webpage when clicking on the Register button
+*/
+
+function register() {
+	let mimo = document.getElementById("mimoInput").value
+	document.getElementById("success").innerHTML = mimo + ", you're signed up!"
+	console.log(mimo)
+}
+
+//Accessing user input from a textarea element works the same way. Code .value after accessing the textarea element.
+
+function addReview() {
+	let review = document.getElementById("reviewText").value
+	let addedReview = document.getElementById("addedReview")
+	addedReview.innerHTML = review
+	console.log(review)
+}
+
+function ask() {
+	let question = document.getElementById("questionInput").value
+	console.log(question)
+}
+
+//We need a button and a function to access user input from an input element because the element's value changes when a user interacts with it
+
+function share() {
+	let post = document.getElementById("postText").value
+	console.log(post)
+}
+
+//Set the content of the paragraph to searchWord, the variable that stores the value of the input element.
+function searchMe() {
+	let searchWord = document.getElementById("searchInput").value
+	document.getElementById("area").innerHTML = searchWord
+} 
 
 
-
-
-
-
-
-
-
-
-//Output: 
 //Output: 
 //Output: 
 //Output: 

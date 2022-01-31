@@ -42,6 +42,14 @@ a {
     font-size: 1rem;
 }
 
+input, textarea, button {
+	margin: 1rem;
+	padding: 1.5rem;
+}
+
+img {
+	margin: 1rem;
+}
 /*Classes*/
 
 .container1 {
@@ -273,4 +281,8 @@ a {
 .test {
 	height: 180px;
 	width: 280px;
+}
+
+.buttonshare {
+	margin-left: 8rem;
 }
