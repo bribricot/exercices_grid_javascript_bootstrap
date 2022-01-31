@@ -2475,6 +2475,33 @@ function searchMe() {
 	document.getElementById("area").innerHTML = searchWord
 } 
 
+//**The Document Object Model**
+
+//*The HTMM Document Tree
+
+/*
+Previously, we've seen how we can access HTML elements by their ID with getElementById, the id and innerHTML
+
+*We can also find elements by their location in the HTML document.
+
+console.log(document.body.firstElementChild.innerHTML)
+
+*This displays the entire HTML document that the DOM is rendering.
+
+*To find elements by their location, we need to be able to visualize the HTML document as a tree structure
+
+*First HTML then body then h1, p etc...
+
+*Tree data structures like the one below are commonly used in programming to represent data and relationships in a hierarchical way.
+
+*We can access elements that don't have an ID by their POSITION in the HTML tree structure. 
+
+*We call each element of a tree a node. "html" is the root node, the start of the tree.
+
+*Elements like "p" are called element nodes. 
+We consider the text inside text nodeds even though it doesn't have th "<" and ">"
+*/
+
 
 //Output: 
 //Output: 
