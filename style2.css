@@ -1,0 +1,292 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap');
+
+/*Tags HTML*/
+body {
+	background-color: #000000
+}
+
+h1 {
+	text-align: center;
+	font-size: 1.5rem;
+	color: #A9A9A9;
+	font-family: 'Open Sans';
+	padding: 10px;
+}
+
+h2 {
+	text-align: left;
+	font-size: 1.2rem;
+	color: #A9A9A9;
+	font-family: 'Open Sans';
+	padding: 7px;
+}	
+
+p {
+	color: #A9A9A9;
+	padding: 10px;
+	font-family: 'Open Sans';
+	font-size: 1rem;
+}
+
+span.command {
+	font-family: 'Open Sans';
+	font-weight: 100;
+	font-size: 0.80rem;
+	color: darksalmon;
+}
+hr {
+  border: 0;
+  border-top: 1px solid #CCC;
+}
+
+a {
+	padding-left: 5px;
+    color: darksalmon;
+    text-decoration: none;
+    font-size: 1rem;
+}
+
+input, textarea, button {
+	margin: 1rem;
+	padding: 1.5rem;
+}
+
+img {
+	margin: 1rem;
+}
+/*Classes*/
+
+.container1 {
+	display: grid;
+	background-color: #E8E8E8;
+	color: #FFDAB9;
+	padding: 0.75rem;
+	margin: 15px;
+	border-radius: 20px;
+	gap: 0.5rem;
+	padding: auto;
+}
+/*The gap CSS property sets the gaps (gutters) between rows and columns. It is a shorthand for row-gap and column-gap.*/
+
+.item1 {
+	background-color: #FFDAB9;
+	color: #A9A9A9;
+	font-family: 'Open Sans';
+	font-size: 1rem;
+	text-align: center;
+	border-radius: 30px;
+}
+
+.option {
+    font-family: 'Open Sans';
+	font-size: 1.1rem;
+	margin: 30px;
+	line-height: 4.2;
+	color: darksalmon;
+}
+.container2 {
+	display: grid;
+	background-color: #E8E8E8;
+	color: #FFDAB9;
+	padding: 10px;
+	margin: 15px;
+	border-radius: 20px;
+	grid-template-columns: 100px 130px 100px;
+	gap: 0.5rem;
+} 
+
+.container3 {
+	display: grid;
+	background-color: #E8E8E8;
+	color: #FFDAB9;
+	padding: 0.75rem;
+	margin: 15px;
+	border-radius: 20px;
+	grid-gap: 1rem;
+	grid-template-areas: "item1 item2 item3";
+}
+.container4 {
+	display: grid;
+	background-color: #E8E8E8;
+	color: #FFDAB9;
+	padding: 0.75rem;
+	margin: 15px;
+	border-radius: 20px;
+	grid-gap: 1rem;
+	grid-template-areas: "item1 item2 item2";
+}
+
+.container5 {
+	display: grid;
+	background-color: #E8E8E8;
+	color: #FFDAB9;
+	padding: 0.75rem;
+	margin: 15px;
+	border-radius: 20px;
+	grid-gap: 1rem;
+	grid-template-areas: "... item1 ... item2";
+}
+.container6 {
+	display: grid;
+	background-color: #E8E8E8;
+	padding: 0.75rem;
+	margin: 15px;
+	border-radius: 20px;
+	grid-gap: 1rem;
+	grid-template-areas: "item1 item2" "item3 item4";
+}
+
+.container7 {
+	display: grid;
+	background-color: #E8E8E8;
+	padding: 0.75rem;
+	margin: 15px;
+	border-radius: 20px;
+	grid-gap: 0.5rem;
+	grid-template-areas: "header header" "sidebar main" "footer footer";
+}
+
+.container8 {
+	display: grid;
+	background-color: #E8E8E8;
+	padding: 0.75rem;
+	margin: 15px;
+	border-radius: 20px;
+	grid-gap: 0.5rem;
+	grid-template-areas: "header header header header" "sidebar main main main" "sidebar photo photo button" "footer footer footer footer";
+}
+
+.container9 {
+	display: grid;
+	background-color: #E8E8E8;
+	padding: 0.75rem;
+	margin: 15px;
+	border-radius: 20px;
+	grid-template-columns: repeat(2, 1fr);
+	grid-gap: 0.5rem;
+	justify-items: stretch;
+}
+
+.container10 {
+	display: grid;
+	background-color: #E8E8E8;
+	padding: 0.75rem;
+	margin: 15px;
+	border-radius: 20px;
+	grid-template-columns: repeat(2, 1fr);
+	grid-gap: 0.5rem;
+	justify-items: start;
+}
+
+.container11 {
+	display: grid;
+	background-color: #E8E8E8;
+	padding: 0.75rem;
+	margin: 15px;
+	border-radius: 20px;
+	grid-template-columns: repeat(2, 1fr);
+	grid-template-rows: 100px;
+	grid-gap: 0.5rem;
+	justify-items: stretch;
+}
+
+.container12 {
+	display: grid;
+	background-color: #E8E8E8;
+	padding: 0.75rem;
+	margin: 15px;
+	border-radius: 20px;
+	grid-gap: 0.5rem;
+	grid-template-areas: "header header header header" "sidebar main main main" "sidebar photo photo button" "footer footer footer footer";	
+}
+
+.container13 {
+	display: grid;
+	background-color: #E8E8E8;
+	padding: 0.75rem;
+	margin: 15px;
+	border-radius: 20px;
+	grid-gap: 0.5rem;
+	grid-template: repeat(5, 1fr) / 1fr 1fr;
+}
+
+.navbar {
+	display: flex;
+	justify-self: flex-end;
+	grid-column: span 2;
+}
+
+ .item-1 {
+	grid-area: item1;
+}
+.item-2 {
+	grid-area: item2;
+}
+.item-3 {
+	grid-area: item3;
+}
+.item-4 {
+	grid-area: item4;
+}
+
+.main {
+	grid-area: main;
+}
+.sidebar {
+	grid-area: sidebar;
+}
+.header {
+	grid-area: header;
+}
+.footer {
+	grid-area: footer;
+}
+.photo {
+	grid-area: photo;
+}
+.button {
+	grid-area: button;
+}
+
+#buy-button {
+	grid-area: button;
+	color: #FFFFFF;
+	background-color: darksalmon;
+	border-radius: 10px;
+	font-weight: 300;
+	padding: 20px;
+}
+
+/* Bootstraps styles */
+
+.col-5, .col-7 {
+	background-color: #FFDAB9;
+	color: #A9A9A9;
+	font-family: 'Open Sans';
+	font-size: 1rem;
+	text-align: center;
+	border-radius: 30px;
+}
+
+.col-6 {
+	background-color: #FFDAB9;
+	color: #A9A9A9;
+	font-family: 'Open Sans';
+	font-size: 1rem;
+	text-align: center;
+	border-radius: 30px;
+	margin: 10px;
+}
+
+.btn {
+	border: 2px solid #FFFFFF;
+}
+
+.test {
+	height: 180px;
+	width: 280px;
+}
+
+.buttonshare {
+	margin-left: 8rem;
+}

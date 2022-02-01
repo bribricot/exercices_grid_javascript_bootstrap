@@ -2610,7 +2610,60 @@ function publish() {
 
 }
 
-//To select a specific element, we add a selector inside parentheses, like coding "p" if we want to get the paragraph below the button. 
+/*
+To select a specific element, we add a selector inside parentheses, like coding "p" if we want to get the paragraph below the button. 
 
+*It works with all selectors, like tags, classes, and ID's. (# ID, . class, tags p)
 
+*querySelector only retrieves the first element it finds. If we have two elements with the same tag or class, we only access the first one. 
 
+h3 * only me
+h3
+h3
+querySelector("h3") 
+
+To recap : Only the first HTML element that matches its search is what does the querySelector() method access.
+
+For accessing a different element of the SAME class, we can specify the tag then the class if a class is shared by different tags.
+
+*If the tags has multiple classes, we can add the other class right after the first.  (".firstclass.secondclass")
+*/
+
+//*Setting attributes dynamically
+
+/*
+How to change HTML attributes with JS, just like we're changing the src attribute on each button press in this example of picture profile when click a button, changed.
+
+*Once we've accessed an element with JavaScript, we can get its attributse by adding a "." followed by the attribute name.
+
+*For example, after we've stored an "img" element inside the "element2" variable, we write "element2.src" to get the attribute value.
+*/
+
+function showAttribute() {
+	let element2 = document.querySelector("img")
+	console.log(element2.src)
+}
+
+function changeAttribute() {
+	let element3 = document.querySelector("img")
+	element3.src = "https://mimo.app/r/kittles.png"
+	console.log(element3)
+}
+
+//We can even use attributes to change how eleents work and behave on a webpage.
+
+function changeQuestionType() {
+	let element4 = document.querySelector("#range")
+	element4.type = "checkbox"
+} 
+
+//Changing the right attributes can be very powerful. Change this webpage's entire look by setting a style sheet:
+
+function darkMode() {
+	let element5 = document.querySelector("#actualstyle")
+	element5.href = "style2.css"
+}
+
+//We access an element's attribute after we've stored the element inside a variable, by cooding a period followed by the attribute name.
+
+//You can also set the input element type andd placeholder attributes element.placeholder = "MyPlaceholder"

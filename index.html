@@ -6,7 +6,7 @@
 		<title>CSS</title>
   		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reseter.css"/>
 		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-  		<link rel="stylesheet" href="style.css"/>
+  		<link id="actualstyle" rel="stylesheet" href="style.css"/>
 	</head>
 	<body id="parent">
 		<section id="grids">
@@ -206,26 +206,31 @@
 				<p id="success"></p>
 			</div>
 			<h1>Customer Reviews</h1>
+			<p>Leave a Review</p>
 			<div class="review">
-				<p>Leave a Review</p>
 				<textarea id="reviewText" rows="2" cols="40" placeholder="Write your review here"></textarea>
 			</div>
 			<div class="button">
 				<button onclick="addReview()">Add a review</button>
 				<p id="addedReview"></p>
 			</div>
-			<div class="question">
+			<div class="question, input">
 				<input type="text" id="questionInput" placeholder="Ask your question">
+			</div>
+			<div class="button">
 				<button onclick="ask()">Ask</button>
 			</div>
+
 			<div class="profile">
 				<img id="profilePicture" src="https://via.placeholder.com/150" alt="Profile picture" height="45">
+			</div>
+			<div class="review">				
 				<textarea id="postText" cols="10" rows="13" placeholder="What's on your mind"></textarea>
 			</div>
-			<div class="buttonshare">
+			<div class="button, share">
 				<button onclick="share()">Share</button>
 			</div>
-			<div class="searcheme">
+			<div class="searcheme, input">
 				<input id="searchInput" type="text" placeholder="Search...">
 			</div>
 			<div class="button">
@@ -237,6 +242,18 @@
 			<div class="button">
 				<button onclick="publish()">Publish website</button>
 				<p id="p">Publishing not completed</p>
+			</div>
+			<div class="button">
+				<button onclick="showAttribute()">Show Attribute Value</button>
+				<button onclick="changeAttribute()">Change Attribute Value</button>
+			</div>
+			<div class="button">
+				<button onclick="changeQuestionType()">Change survey option</button>
+				<p>Submit answer:</p>
+				<input id="range" type="range">
+			</div>
+			<div class="darkmode, button"> <! --Faire un toggle!-->
+				<button onclick="darkMode()">Dark Mode</button>
 			</div>
 		</section>
 		<script type="text/javascript" src="./script.js"></script>
