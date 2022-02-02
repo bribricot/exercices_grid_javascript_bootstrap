@@ -2674,10 +2674,73 @@ function showColor() {
 	console.log(element6.style.color)
 }
 
-//el.style.borderRadius = "45px"
-//el.style.backgroundColor = "blue"
-//el.style.border = "5px solid lightGray" 
+/*
+el.style.borderRadius = "45px"
+el.style.backgroundColor = "blue"
+el.style.border = "5px solid lightGray" 
+*/
 
 //*Getting and Setting Attributes
+
+/*
+How to use JS methods to change HTML attributes? (Element.getAttribute() method)
+
+*Before changing the attribute, we'll use the querySelector to store the img element inside the element7 variable.
+
+*We'll want to access the img element's src attribute and store it. Let's store it in a new variable called imageLink
+
+*To get an attribute's value, we have to use the getAttribute() method.
+
+*Inside the parentheses, we specify which attribute value we want. Here, we'll code src inside quotes to get the image link.
+
+*We can confirm we got the value by printing the imageLink variable to the console. 
+*/
+
+function displayAttribute() {
+	let element7 = document.querySelector("#cat")
+	console.log(element7)
+	let imageLink = element7.getAttribute("src")
+	console.log(imageLink) //Does the same thing as element7, but with imageLink we act with element7 and focus on the src attribute
+}
+
+//getAttribute() also works if we want to get all the attributes values, like multiple style ones for example:
+
+function displayMultipleStyles() {
+	let element8 = document.querySelector("#pokemonlink")
+	let imageStyle = element8.getAttribute("style")
+	console.log(imageStyle)
+} 
+displayMultipleStyles()
+//Output: color: #FFDAB9; font-size: 1.3rem;
+
+/*
+Now that we've learned how to access attributes, let's learn how to change them (setAttribute())
+
+*Here, we have the "img" element stored inside the element9 variable. To set an attribute, we use the setAttribute() method after the variable name.
+
+*Inside the parentheses, we first have to specify which attribute we want to set, like src in our case.
+
+*Next, we want to provide the new value for src. We add the new value after a comma and inside quotes. Both the attribute we want to change and the new value. First the attribute and then the value.
+
+*Let's display element9.getAttribute("#cat") again to see that the web address actually changed.
+*/
+
+function changeImage() {
+	let element9 = document.querySelector("#cat")
+	element9.setAttribute("src", "https://mimo.app/r/kittles.png")
+	console.log(element9.getAttribute("src"))
+}
+//Output: https://mimo.app/r/kittles.png
+changeImage()
+
+function changeType() {
+	let element10 = document.querySelector("#mimoInput")
+	element10.setAttribute("type", "range")
+}
+
+changeType()
+
+
+
 
 

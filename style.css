@@ -52,6 +52,11 @@ img {
 }
 /*Classes*/
 
+#pokemonlink {
+	color: #FFDAB9;
+	font-size: 1.3rem;
+}
+
 .redcolor {
 	color: #FFDAB9;
 }
