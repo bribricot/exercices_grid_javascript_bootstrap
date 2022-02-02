@@ -2667,3 +2667,17 @@ function darkMode() {
 //We access an element's attribute after we've stored the element inside a variable, by cooding a period followed by the attribute name.
 
 //You can also set the input element type andd placeholder attributes element.placeholder = "MyPlaceholder"
+
+function showColor() {
+	let element6 = document.querySelector(".redcolor")
+	element6.style.color = "#FFDAB9"
+	console.log(element6.style.color)
+}
+
+//el.style.borderRadius = "45px"
+//el.style.backgroundColor = "blue"
+//el.style.border = "5px solid lightGray" 
+
+//*Getting and Setting Attributes
+
+

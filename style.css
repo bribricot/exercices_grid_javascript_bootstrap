@@ -52,6 +52,10 @@ img {
 }
 /*Classes*/
 
+.redcolor {
+	color: #FFDAB9;
+}
+
 .container1 {
 	display: grid;
 	background-color: #E8E8E8;
