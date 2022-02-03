@@ -2738,9 +2738,58 @@ function changeType() {
 	element10.setAttribute("type", "range")
 }
 
-changeType()
+function updateElement() {
+	let element11 = document.querySelector("#mimoInput")
+	element10.setAttribute("placeholder", "MyPlaceholder")
+}
 
+//*Getting Tags and Classes
 
+/* 
+So far we've only looked at ways of accessing one element at a time with methods like getElementById() or querySelector(). 
 
+*But what if we want to access more than one element at a time? For example, what if we wanted to count items in a list?
 
+*We can get a COLLECTION of elements of the same tag type with getElementsByTagName()
+
+*Collections are similar to ARRAYS. They work with indices that start from 0. DDisplay the first element's HTML content.
+
+*Just like with arrays, we can also access the length property of a collection 
+
+*/
+
+function displayItem() {
+	let element11 = document.getElementsByTagName("li")
+	console.log(element11[0].innerHTML)
+	console.log(element11.length)
+}
+displayItem()
+//Output : Flour
+//When console.log only the variable element11, it just displays the entire collection of all lists that existed in the HTML. All tags.
+
+//If we want to return a collection that contains specific elements of a class, we can use the getElementsByClassName() method instead.
+
+function displayTasks() {
+	let element12 = document.getElementsByClassName("urgent")
+	console.log("You have " + element12.length + " tasks")
+}
+displayTasks()
+//Output: You have 5 tasks.
+
+//Since getElementsByClassName() also returns a collection, we can then access each element through the index. Display the first urgent task.
+
+function displayItems() {
+	let element13 = document.getElementsByClassName("urgent")
+	console.log(element13[3].innerHTML)
+}
+displayItems()
+//Call John
+
+//To access multiple elements that have mmore than one class, we just add the classes with a space in between (in HTML: class="urgent, important") (in JS: getElementsByClassName("urgent important"))
+
+function displayMultipleClasses() {
+	let element14 = document.getElementsByClassName("list urgent")
+	console.log(element14.length)
+}
+displayMultipleClasses()
 
