@@ -2765,7 +2765,7 @@ function displayItem() {
 }
 displayItem()
 //Output : Flour
-//When console.log only the variable element11, it just displays the entire collection of all lists that existed in the HTML. All tags.
+//When console.log only the variable element11, it just displays the entire collection of all lists that existed in the HTML. All tags. It returns a collection of elements that have the same tag.
 
 //If we want to return a collection that contains specific elements of a class, we can use the getElementsByClassName() method instead.
 
@@ -2792,4 +2792,56 @@ function displayMultipleClasses() {
 	console.log(element14.length)
 }
 displayMultipleClasses()
+
+//*Querying Multiple Elements
+
+//So far we've only been able to retrieve multiple elements if they had the same tag or class name.
+
+function displayH3() {
+	let element15 = document.getElementsByTagName("h3")
+	console.log(element15[0].innerHTML)
+}
+displayH3()
+//Output: Breaking News
+
+//There's also another more powerful way of getting array-like lists of elements, and that's with the querySelectorAll() method:
+
+function displayAllH3() {
+	let element16 = document.querySelectorAll("h3")
+	console.log(element16[2].innerHTML)
+}
+displayAllH3()
+//Output: The New Y-Phone
+
+//The great thing about querySelectorAll() is that it works for both tag and class names.
+
+function displayUrgentItems() {
+	let element17 = document.querySelectorAll(".urgent")
+	console.log(element17)
+}
+displayUrgentItems()
+//Output: NodeList(6) [ li.list,.urgent, li.list,.urgent, li.list,.urgent, li.list,.urgent, li.urgent, li.urgent ]
+
+//We can also use querySelectorAll to look for specific elements, like a h3 element of a class "news"
+
+function displayNewsItems() {
+	let element18 = document.querySelectorAll("h3.news")
+	console.log(element18)
+}
+displayNewsItems()
+//Output: NodeList(3) [ h3.news, h3.news, h3.news ]
+
+//querySelectorAll() lets us do more advance searches like accessing elements of two different classes at the same time. In this example, we're looking for elements of either class movie or tech. To get elements that belong to 2 different classes, we just add one class after the other separated by a comma.
+
+function displayMovieAndTech() {
+	let element19 = document.querySelectorAll(".movie, .tech, h3")
+	console.log(element19.length)
+}
+displayMovieAndTech()
+//Output : 2 + 17 buttons
+
+//We can even combine selectors like classes, tags, or ID. A button tage name will display its text in the console for example.
+
+//When querySelectorAll(".movie, .tech") : it returns elements of either class .movie or .tech ! We can combine inside querySelectoreAll, all types of selectors as long as they separatedd by a comma
+
 
