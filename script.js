@@ -2887,5 +2887,7 @@ function addClasses() {
 
 //To recap, setAttribute() overwrites the element's classes while classList don't.
 
+//**JavaSript Events**
 
+//*Using Event Properties
 
