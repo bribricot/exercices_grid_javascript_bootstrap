@@ -2842,6 +2842,50 @@ displayMovieAndTech()
 
 //We can even combine selectors like classes, tags, or ID. A button tage name will display its text in the console for example.
 
-//When querySelectorAll(".movie, .tech") : it returns elements of either class .movie or .tech ! We can combine inside querySelectoreAll, all types of selectors as long as they separatedd by a comma
+//When querySelectorAll(".movie, .tech") : it returns elements of either class .movie or .tech ! We can combine inside querySelectoreAll, all types of selectors as long as they separated by a comma.
+
+//Toggling CSS classes (https://www.w3schools.com/howto/howto_js_toggle_dark_mode.asp)
+
+/*
+There's a reason why we haven't used setAttribute() to set classes. If we use it to change a class, it overrides the previous class. We can see the issue if we run this code and try to make the text display as both bold and italic.
+
+*There's a better way to add and remove classes and it's with property called classList.
+
+*To add a new class without overriding the previous one, we have to add the classList property. We can then use it to access the add() method.
+
+*Inside the add() method, we code the class we want to add to the element.
+
+*Code bold to add the class once you call the function.
+
+*Classes can be removed from an element as well. To remove a class, code the remove() method.
+
+*If we want to automatically add or remove a class when we call the function, we can use the toggle() method. 
+*/
+
+function addBold() {
+	let element20 = document.querySelector("#stylechanging")
+	element20.classList.add("bold")
+}
+addBold()
+
+function removeBold() {
+	let element21 = document.querySelector("#stylechanging")
+	element21.classList.remove("bold")
+}
+
+function toggleBold() {
+	let element22 = document.querySelector("#stylechanging")
+	element22.classList.toggle("bold")
+}
+
+//We can add multiple classes to an element at the same time. Let's add two new classes to our paragraph element. We can easily remove multiple classes as well by add remove()
+
+function addClasses() {
+	let element23 = document.querySelector("#style1")
+	element23.classList.add("highlight", "underline")
+}
+
+//To recap, setAttribute() overwrites the element's classes while classList don't.
+
 
 
