@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300&family=Roboto+Mono:wght@100&family=Roboto:wght@300&display=swap');
+
 /*Tags HTML*/
 h1 {
 	text-align: center;
@@ -24,13 +25,13 @@ p {
 	font-size: 1rem;
 }
 
-
 span.command {
 	font-family: 'Roboto Mono', monospace;
 	font-weight: 100;
 	font-size: 0.80rem;
 	color: darksalmon;
 }
+
 hr {
   border: 0;
   border-top: 1px solid #CCC;
@@ -51,6 +52,7 @@ input, textarea, button {
 img {
 	margin: 1rem;
 }
+
 /*Classes*/
 
 .italic {
@@ -88,8 +90,49 @@ img {
 	background-color: skyBlue;
 }
 
+.eventcolor {
+	background-color: skyBlue;
+	height: 100px;
+	padding: 20px;
+}
+
 .pink {
 	background-color: pink;
+}
+
+.mydiv {
+	text-align: center;
+	background-color: SkyBlue;
+	height: 100px;
+	width: 50%;
+	margin: 20px;
+}
+
+.width {
+	width: 80%;
+}
+
+.height {
+	height: 200px;
+}
+
+.mybuttons {
+	padding: 3px 12px 3px 12px;
+	border-radius: 20px;
+	font-weight: bold;
+	border: 0px solid;
+	background-color: darksalmon;
+	color: #FFFF;
+}
+
+.done {
+	background-color: lightskyblue;
+	text-decoration: line-through;
+}
+
+.undo {
+	text-decoration: none;
+	background-color: none;
 }
 /*The gap CSS property sets the gaps (gutters) between rows and columns. It is a shorthand for row-gap and column-gap.*/
 

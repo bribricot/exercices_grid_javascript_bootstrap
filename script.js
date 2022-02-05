@@ -2842,7 +2842,7 @@ displayMovieAndTech()
 
 //We can even combine selectors like classes, tags, or ID. A button tage name will display its text in the console for example.
 
-//When querySelectorAll(".movie, .tech") : it returns elements of either class .movie or .tech ! We can combine inside querySelectoreAll, all types of selectors as long as they separated by a comma.
+//When querySelectorAll(".movie, .tech") : it returns elements of either class .movie or .tech ! We can combine inside querySelectorAll, all types of selectors as long as they separated by a comma.
 
 //Toggling CSS classes (https://www.w3schools.com/howto/howto_js_toggle_dark_mode.asp)
 
@@ -2954,8 +2954,8 @@ function updateDate() {
 	mydate.innerText = newdate.value
 }
 
-let newdate = document.getElementById('newdate')
-let mydate = document.getElementById('mydate')
+let newdate = document.getElementById("newdate")
+let mydate = document.getElementById("mydate")
 newdate.oninput = updateDate
 
 
@@ -2963,12 +2963,114 @@ function updateValue() {
 	mylog.innerText = myinput.value.length
 }
 
-let myinput = document.getElementById('input1')
-let mylog = document.getElementById('log1')
+let myinput = document.getElementById("input1")
+let mylog = document.getElementById("log1")
 myinput.oninput = updateValue
 
+/*
+If we want to trigger an event anytime an element's input changes, we use the oninput property. Complete the code and type something to see it work.
 
-//If we want to trigger an event anytime an element's input changes, we use the oninput property. Complete the code and type something to see it work:
+To recap: 
+
+*onchange : Displays changes to the input element only after the changes are done. 
+It's the property to make display any final change to the input element.
+*oninput : Displays changes to the input element while they're taking place. 
+It's the property to make display any input change while it takes place.
+*/
+
+//*Adding events with methods
+
+/*
+Let's learn about a newer way of adding events to elements that let's us add multiple event handlers to the same event. 
+
+*For toggle different height and width value for example. 
+
+*A more modern way of adding events to elements is with the addEventListener() method. Add the click event and tap on the element.
+
+*Once we've added the method, we add the name of the event we want to change, followed by a comma and the function we want to call changeColors here...
+
+*When using methods to add or remove events, we use the event names and not the property names. Insteadd of onclick, we write "click"
+
+*/
+
+function changeColors() {
+	item1.classList.toggle("pink")
+}
+
+let item1 = document.querySelector("#myevent")
+item1.addEventListener("click", changeColors)
+
+//We can also remove events with the removeEventListener() method. Removing elements comes in handy if we only want an event to happen once. To make the element change color only once, we can remove the click event from inside the changeOnceColors() event handler
+
+function changeOnceColors() {
+	item2.classList.toggle("pink")
+	item2.removeEventListener("click", changeOnceColors)
+}
+
+let item2 = document.querySelector("#myevent2")
+item2.addEventListener("click", changeOnceColors)
+
+/*
+Adding events with the help of methods can come in handy if we want to add multiple event handlers to the same event trigger. Although we have three buttons below, we're gonna actually only using two event handlers.
+
+button height & width, button height, button width.
+
+*If we want an element to have MULTIPLE event handlers for the same element, we can add them one by one with the addEventListener() method.
+*/
+
+function changeWidth() {
+	item3.classList.toggle("width")
+}
+
+function changeHeight() {
+	item3.classList.toggle("height")
+}
+
+let item3 = document.querySelector(".mydiv")
+let element26 = document.querySelectorAll(".mybuttons")
+
+element26[0].addEventListener("click", changeHeight)
+element26[0].addEventListener("click", changeWidth)
+
+element26[1].addEventListener("click", changeHeight)
+element26[2].addEventListener("click", changeWidth)
+
+//To do List
+
+function markDone() {
+	item4.classList.toggle("done")
+}
+
+let item4 = document.querySelector("#item-1")
+item4.addEventListener("click", markDone)
+
+//Remove an item from the to do list
+
+function removeItem() {
+	item5.innerText = ""
+}
+
+let clearButton = document.querySelector("#removebutton")
+let item5 = document.querySelector("#item-1")
+clearButton.addEventListener("click", removeItem)
+
+//Undo the remove method.
+
+function undoRemove() {
+	item6.innerText = "Work out"
+}
+
+let undoButton = document.querySelector("#undo")
+let item6 = document.querySelector("#item-1")
+undoButton.addEventListener("click", undoRemove)
+
+/*
+To recap:
+
+* addEventListener() is a method that defines what event handler to be called when an event is triggered on an element.
+*/
+
+
 
 
 
