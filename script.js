@@ -2889,7 +2889,8 @@ function addClasses() {
 
 //**JavaSript Events**
 
-//*Using Event Propertie
+//*Using Event Properties
+
 /*
 Let's learn how to make webpages react to user interactions that are different than buttons, like a character counter in a text area...
 
@@ -2907,4 +2908,68 @@ function publish() {
 let eventtext = document.querySelector("#eventtext")
 let element24 = document.querySelector("#buttonevent")
 element24.onclick = publish
+
+/*
+Once we have the property we can call a function by adding "=" and the function name without parentheses.
+
+*The function called after an event is triggered andd referred as an EVENT HANDLER.
+
+*We specify how we want the event to be handdled inside these types of functions.
+
+To recap: 
+*An event gets triggered once a user does something on a webpage
+
+*We don't need parentheses when setting the event hanler on an event property.
+
+*An event handler is a function called after an event is triggered.
+*/
+
+//*Exploring Event Properties
+
+//Let's take a look at other webpage events, like this one which triggers when we change what we type in an input element. We can add event to other elements types if we want to. For example, we can add onclick to a div element.
+
+function changeColor() {
+	element25.classList.toggle("pink")
+}
+
+let element25 = document.querySelector(".divcolor")
+element25.ondblclick = changeColor
+
+/*
+Depending on how we want the element to behave, we might want to add a different event. For example, tapping an item to change its color makes more sense to happen on a double click.
+
+*If we want to trigger an event when a user scrolls on a webpage, we can use the onScroll property. Complete the code andd scroll down to change the background color.
+*/
+
+function changeOnScroll() {
+	textarea2.style.backgroundColor = "aliceBlue"
+}
+
+let textarea2 = document.querySelector("#textarea2")
+textarea2.onscroll = changeOnScroll
+
+//If we want to trigger an event when an input field changes its value, we can use the onchange property. This property only triggers after the change is done.
+
+function updateDate() {
+	mydate.innerText = newdate.value
+}
+
+let newdate = document.getElementById('newdate')
+let mydate = document.getElementById('mydate')
+newdate.oninput = updateDate
+
+
+function updateValue() {
+	mylog.innerText = myinput.value.length
+}
+
+let myinput = document.getElementById('input1')
+let mylog = document.getElementById('log1')
+myinput.oninput = updateValue
+
+
+//If we want to trigger an event anytime an element's input changes, we use the oninput property. Complete the code and type something to see it work:
+
+
+
 
