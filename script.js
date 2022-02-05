@@ -2889,5 +2889,22 @@ function addClasses() {
 
 //**JavaSript Events**
 
-//*Using Event Properties
+//*Using Event Propertie
+/*
+Let's learn how to make webpages react to user interactions that are different than buttons, like a character counter in a text area...
+
+*Webpages know when to react to user interactions because of EVENTS. we've already  been using an event : onclick.
+
+*HTML event attributes are easy to use, but they're a bit outdated and hardder to manage for bigger chuncks of code. Attributes make the HTML hard to manage and read even for short code like onlick in all the buttons tags for example.
+
+*A more maintainable way of adding events is with event properties. 
+*/
+
+function publish() {
+	eventtext.innerHTML = "Website published"
+}
+
+let eventtext = document.querySelector("#eventtext")
+let element24 = document.querySelector("#buttonevent")
+element24.onclick = publish
 
