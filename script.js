@@ -3064,14 +3064,42 @@ let undoButton = document.querySelector("#undo")
 let item6 = document.querySelector("#item-1")
 undoButton.addEventListener("click", undoRemove)
 
-/*
-To recap:
+//To recap:  addEventListener() is a method that defines what event handler to be called when an event is triggered on an element.
 
-* addEventListener() is a method that defines what event handler to be called when an event is triggered on an element.
+//*Touch events
+
+/*
+Let's lean to apply touch events to a webpage so that users can trigger an action. The following will only be interactive on touch displays
+
+*We use touch events to determine whether a user has interacted with a webpage element and then use a function to perform a specific action. Let's create a function that adds the text "Whooff" to an element once a touch event happens:
+
+*When we want to check whether users have begun to interact with an element, we use the "touchstart" event.
+
+*When we want to determine whether a user has interacted with an element for a prolonged time like a zoom etc... We use the "touchmove" event. It's for a user that are interacting with an element for a prolonged time.
+
+*To check whether a user has stopped interacting with an element, we use the "touchend" event. It's when a user stops interacting with an element.
+
 */
 
+document.getElementById("mydog").addEventListener("touchstart", displayWhooff)
 
+function displayWhooff() {
+	document.getElementById("mymessage").innerHTML = "Whooff"
+}
 
+document.getElementById("mydog").addEventListener("touchend", clearMessage)
+
+function clearMessage() {
+	document.getElementById("mymessage").innerHTML = ""
+}
+
+//Lastly, it's good coding practice to check if a touch event gets interrupted using the "touchcancel" event. It's when a user has interrupted a touch with an element.
+
+document.getElementById("mydog").addEventListener("touchcancel", cancelMessage)
+
+function cancelMessage() {
+	document.getElementById("mymessage").innerHTML = "Touch was interrupted"
+}
 
 
 
