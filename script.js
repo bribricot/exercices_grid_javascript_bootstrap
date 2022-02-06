@@ -3101,5 +3101,5 @@ function cancelMessage() {
 	document.getElementById("mymessage").innerHTML = "Touch was interrupted"
 }
 
-
+//**  React  **
 
